@@ -920,5 +920,45 @@ int main(int argc, char** argv) {
 |`find / -ctime +1`|Vind aanpassingen van meer dan 24u geleden|
 |`genisoimage -J --rock -o etc.iso /etc /etc`|Rockridge extensies en andere wat een iso maakt van /etc met goede compatibiliteit.|
 |`printf "%x\n" {0..256..2}`|Print alle even nummers van 0 tot 256 in hex|
-|`echo {{0..9},{a..f}}{{0..9},{a..f}}`|Doet hetzelfde als bovenstaande, maar deze keer met enkel braces|
-|`echo {{0..9},{a..f}}{{0..9},{a..f}}`|Print alle hex nummers van 00 tot FF|
+
+|`set -C noclobber`|Laat niet toe om met > files te overschrijven.|
+|`echo ok >\| test`|Gaat bij noclobber toch wegschrijven naar file|
+|`set +C noclobber`|Gaat noclobber disablen en dan kunnen we files terug overschrijven met >|
+|`du -h -s /etc`|Dit gaat de grootte van de directory (-s = summary) /etc nemen|
+|`du -h /etc`|Dit gaat alle folders in /etc apart tonen|
+|`\>\>`|Gaat appenden, vb: echo "" >> test.txt|
+|`du -h / >test 2>>test2`|Stuurt output naar test en error append aan test2|
+|`du -h / > /dev/null`|Redirect output naar null en toont enkel errors|
+|`cat /dev/null > test`|maakt bestand test leeg|
+|`fuser /var/log/messages`|Gaat pid geven van process dat dit bestand gebruikt|
+|`ps -aux \| grep -E "^2198"`|Grepped process output en ziet wat dit pid gebruikt|
+|`ln -s /dev/null test`|symlink test naar /dev/null wat dit bestand leeg houdt, symlinks nemen enkel een inode in beslage|
+|`du / >test 2>&1`|Dit gaat alles aan test toevoegen en errors ook, let op de volgorde|
+|`du / &>test`|Hetzelfde als bovenstaand|
+|`( echo Hallo; du /etc; ) > test 2>&1`|Gaat eerst echo uitvoeren en daarna hallo; dan gaat men deze allebei groeperen en naar de file test sturen. fouten ook.|
+|`{ echo Hallo; du /etc; } > test 2>&1`|Dit gaat een subshell opstarten voor dit commando.|
+|`du / 2>&1 >/dev/null \| wc -c`|Dit gaat de fouten naar less sturen en de normale output weggooien.|
+|`head -n 3 /etc/passwd | tail -n 1`|Gaat lijn 3 tonen|
+|` if [ `wc -l < /etc/passwd` -gt 3 ^C then head -n3 | tail -n1; fi;`|Gaat kijken of de file input genoeg lijnen heeft, anders print hij niets|
+|`if (( `wc -l < /etc/passwd` > 3 )); then head -n3 /etc/passwd | tail -n1; fi;`|Doet hetzelfde als bovenstaand, enkel met de nieuwere syntax|
+|`dos2unix`|Gaat de DOS <CR><LF> vervangen door unix <LF>|
+|`unix2dos`|Gaat de unix <LF> vervangen door windows <CR><LF>|
+|`tr a-z A-Z < /etc/passwd`|tr staat voor translate, dit accepteerd geen bestand op de input lijn. we gebruiken dus input redirection. Dit gaat het eerste set veranderen door de tweedes set, dit is dus touppercase|
+|`tr -d '\r' < test`|Dit verwijdert de \r's|
+|`file /bin/printf`|Gaat allemaal info tonen over de file, als het executable is gaat dit commando bijvoorbeeld tonen dat het een elf32 file is, of deze linked is, gestripped (dat debug code weg is), sha checksum, ...|
+|`uniq -d /etc/passwd | sort -u`|We gebruiken sort om de lijnen te sorteren, dit omdat uniqid verwacht dat de lijnen aanhangend zijn.|
+|`grep -E "(C\-[a-z] ).*\1" TUTORIAL`|Regex met grep|
+|`last | less`|Toont wie er ingelogd was|
+|`w`|Toont info over huidige gebruiker|
+|`history -c`|Cleared history|
+|`sort -t : -k 4,4 -n /etc/passwd`|Gaat splitsen op : en sorteren op het 4de veld, dit is numeriek door de -n optie|
+|` cut -d : -f1 /etc/passwd`|Gaat alle gebruikersnamen van /etc/passwd tonen|
+|`cut -d : -f1 /etc/passwd | tee test`|Gaat uitschrijven naar scherm en dankzij tee direct naar een bestand.|
+|`find /etc -name pass\*`|Gaat alle bestanden vinden die met pass beginnen in de /etc dir, merk op: we gaan dit escapen omdat de shell dit anders expandeert!|
+|`find / -type d -name sh\*`|Gaat dirs zoeken die met de naam sh beginnen|
+|`find /usr/ -type f -size +1M`|Gaat bestanden zoeken in /usr die groter zijn dan 1M|
+|`find /usr/ -type f -size +1M -printf "%s %p\n"`|Toont alle bestanden van vorig commando en print grootte en de naam.|
+|`find ~/ -type f -mtime -14 -printf "%p\t%s\t%t\n"`|Toont bestanden die laatst gewijwigd zijn|
+|`find /usr -type f -name "*.h" -printf "%h\n" \| sort \| uniq`|Toont alle directories zonder duplicaten die header files bevatten.|
+|`find / -type d 2>&1 >/dev/null | cut -d : -f2`|Toont alle bestanden waar we geen toegang tot hebben|
+|`find /bin -type f -perm -u=r,-u=w,-u=x`|Toont bestanden waarvoor de huidige gebruiker write, execute en read mogelijkheden heeft.|
