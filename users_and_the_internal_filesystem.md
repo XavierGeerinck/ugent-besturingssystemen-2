@@ -76,4 +76,3 @@ We kunnen ook de **standaardwaarde** instellen van welke rechten een nieuw fileo
 |sticky bit **(op dir)** |als het op dir gezet wordt, kan men enkel bestanden verwijderen waarvan men eigenaar is) (zet via `chmod o+t`, geeft kleine t als ook execute, grote T als geen execute, via octaal: `chmod 1777 /tmp`
 |set-user-id bit (SUID)|process van binair bestand krijgt id van gebruikersnaam (effective user id), als SGID dan groupsid, zo kunnen we bijvoorbeeld met passwd het passwd bestand aanpassen ook al hebben we geen schrijfrechten tot /etc/shadow. vb flag: `chmod 4000` of `chmod u+s` of `chmod g+s`. Gaat enkel voor binaire bestanden!|
 |set-group-id bit (SGID)|als deze gezet, dan is de group gelijk aan group van directory en niet van gebruiker, `chmod 2000`
-
