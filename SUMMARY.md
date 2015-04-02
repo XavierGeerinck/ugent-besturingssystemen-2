@@ -6,4 +6,5 @@
 * [Commands](commands.md)
 * [Bash Scripting](bash_scripting.md)
 * [Users and the internal filesystem](users_and_the_internal_filesystem.md)
+* Exercises
 
