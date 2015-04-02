@@ -906,3 +906,17 @@ int main(int argc, char** argv) {
 |`tail -f`|Gaat het bestand streamen|
 |`systemctl list-dependencies`|Gaat de startup services tonen|
 |`journalctl --unit sendmail.service`|Gaat alle logboodschappen tonen van de sendmail unit|
+|`rm -- -rf`|Verwijdert de file met de name -rf|
+|`touch -- -rf`|Gaat bestand -rf aanmaken, dit beschouwt alles achter -- als letterlijke tekst|
+|`wc -c /etc/passwd`|Print de wordcount van het /etc/passwd bestand|
+|`wc -c < /etc/passwd`|Gaat enkel de wordcount printen en niet het /etc/passwd erachter|
+|`man builtin`|Gaat alle inwendige commando's printen|
+|`set\|less`|Gaat de variabelen tonen die geset zijn|
+|`env`|Print environment variables|
+|`sync`|Gaat de file system buffers clearen, wat alles naar disk gaat schrijven wat nog in het geheugen zit.|
+|`fdisk -l`|Gaat info van disks tonen|
+|`find / -ctime 1`|Vind aanpassingen van exact 24u geleden|
+|`find / -ctime -1`|Vind aanpassingen van minder dan 24u geleden|
+|`find / -ctime +1`|Vind aanpassingen van meer dan 24u geleden|
+|`genisoimage -J --rock -o etc.iso /etc /etc`|Rockridge extensies en andere wat een iso maakt van /etc met goede compatibiliteit.|
+|`printf "%x\n" {0..256..2}`|Print alle even nummers van 0 tot 256 in hex|
