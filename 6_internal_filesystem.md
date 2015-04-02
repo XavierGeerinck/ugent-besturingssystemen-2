@@ -221,7 +221,7 @@ Speciale interface om input/output devices te benaderen als bestanden.
 we hebben 2 soorten special files:
 
 * Character special files: I/O verloopt op karaktergeorienteerde of ruwe en onbehandelde niet gebufferde basis. Typisch voorbeeld zijn de consoleschermen. Dit filetype wordt aangeduid met een `c`.
-*Block special files: I/O verloopt in vaste lengtes, wordt aangeduid met een `b`.
+* Block special files: I/O verloopt in vaste lengtes, wordt aangeduid met een `b`.
 
 Men kan device files aanmaken door:
 
