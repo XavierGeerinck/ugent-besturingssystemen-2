@@ -884,17 +884,18 @@ int main(int argc, char** argv) {
 
 ### Labo Bash
 #### Deel VII
+
 |Commando|Uitleg|
 |--------|------|
-|mktemp| gaat temporary lege file aanmaken met random naam
-|touch| gaat bestand aanmaken of modify date zetten
-|dd| staat voor convert en copy vb: `dd if=/etc/passwd of=passwd`, dit kopieert passwd naar een lokale passwd file. We kunnen if of of weglaten wat cat gaat simuleren of schrijven naar file. 
+|mktemp| gaat temporary lege file aanmaken met random naam|
+|touch| gaat bestand aanmaken of modify date zetten|
+|dd| staat voor convert en copy vb: `dd if=/etc/passwd of=passwd`, dit kopieert passwd naar een lokale passwd file. We kunnen if of of weglaten wat cat gaat simuleren of schrijven naar file. |
 |`dd if=/dev/zero of=disk.img bs=1000M count=1`|dit gaat 1 blok van 1000 bytes van /dev/zero en schrijft dit naar disk.img|
 |`od -tx1 disk.img`|gaat de inhoud van dit bestand printen (orthodump)|
 |`xxd disk.img`| gaat ook een hexadecimale output geven.|
-|`od -tc disk.img`|gaat dit als chars printen.
+|`od -tc disk.img`|gaat dit als chars printen.|
 |`mkfs.ext4 disk.img`|gaat bestandssysteem aanmaken op deze img|
-|`mount disk.img /mnt`|gaat disk.img mounten op /mnt
+|`mount disk.img /mnt`|gaat disk.img mounten op /mnt|
 |`umount /mnt`|gaat unmounten|
 |`dd if=/dev/sda of=mbr.img count=1`|gaat /dev/sda (wat mbr is) kopieren naar mbr.img. We kunnen dit dan bekijken met `od -tc mbr.img \| less`|
 |`strings mbr.img`|Dit gaat de strings weergeven die men hier kan in vinden, kan ook een directory zijn.|
