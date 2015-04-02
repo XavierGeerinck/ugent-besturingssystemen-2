@@ -1,4 +1,4 @@
-## 5 Gebruikers en het Filesystem intern
+## 5 Gebruikers
 ### 5.1 Gebruikers en groepen
 Toegang is bepaald door gebruikersnaam en bijbehorend wachtwoord. Maar ook de groep speelt een rol of een gebruiker toegang heeft tot bepaalde bestanden.
 
