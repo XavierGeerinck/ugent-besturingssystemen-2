@@ -920,3 +920,6 @@ int main(int argc, char** argv) {
 |`find / -ctime +1`|Vind aanpassingen van meer dan 24u geleden|
 |`genisoimage -J --rock -o etc.iso /etc /etc`|Rockridge extensies en andere wat een iso maakt van /etc met goede compatibiliteit.|
 |`printf "%x\n" {0..256..2}`|Print alle even nummers van 0 tot 256 in hex|
+
+|`echo {{0..9},{a..f}}{{0..9},{a..f}}`|Doet hetzelfde als bovenstaande, maar deze keer met enkel braces|
+|`echo {{0..9},{a..f}}{{0..9},{a..f}}`|Print alle hex nummers van 00 tot FF|
