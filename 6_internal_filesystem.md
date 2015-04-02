@@ -150,8 +150,97 @@ Bij het configureren legt men het aantal inodes vast in het superblok. Voor elke
 
 Na de inodes hebben we de datablokken, deze lopen tot het einde en bevatten de eigenlijke gegevens.
 
-#### Variaties
+#### 6.2.1. Variaties
 |variatie|uitleg|
 |--------|------|
 |HP-UX|verdeelt grote blokgrootte in kleinere fragmenten|
-|e2fs|extended filesystem 2, deelt schijf op in blokgroepen|
+|e2fs|extended filesystem 2, deelt schijf op in blokgroepen. Elke blokgroep is een kopie van het superblok. De rest van een blokgroep bevat een reeks inodes met bijbehorende datablokken. Omdat alles in hetzelfde stuk ligt op de schijf gaat de snelheid er op vooruit.|
+|e3fs|Journaling bestandssysteem|
+
+#### 6.2.2. De Inode
+Is een index node dat verwijst naar een fileobject (folder, file, ...) en hun metadata. Dit bevat onderandere:
+
+* user en group (id's)
+* type object (file, dir, special file, soft link, socket, pipe, ...)
+* Rechten
+* Tijdstippen: access time, modify time, change time
+* Aantal links naar de file
+* Omvang van de file
+* Tabel met de adressen van de datablokken van het fileobject
+
+het commando `stat fileordir` toont de inode info:
+
+
+      File: ‘ghost.zip’
+      Size: 2133290   	Blocks: 4168       IO Block: 4096   regular file
+    Device: fd00h/64768d	Inode: 1180746     Links: 1
+    Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+    Access: 2014-08-26 14:03:28.688172740 -0400
+    Modify: 2014-08-26 14:03:16.688172740 -0400
+    Change: 2014-08-26 14:03:16.688172740 -0400
+     Birth: -
+
+stat toont wel meer informatie dan dat in de inode zit opgeslagen. De naam, inodenummer en device maken geen deel uit van de gegevens in de inode.
+
+#### 6.2.3. Structuur van een directory
+Een directory is een soort tabel  met elementen die een naam en een inode nummer hebben. In elk van deze inodes zit dan de verwijzing naar de datablokken.
+
+### 6.3. Soorten bestanden
+#### 6.3.1. Regular files
+Normale files, ascii tekst, binarie info, asm, ...
+
+#### 6.3.2. Directory's
+directory is een binaire file, dit is eigenlijk een map met de naam en het inode nummer.
+
+#### 6.3.3. Links
+2 soorten: symbolic link of hardlink.
+
+##### 6.3.3.1. Symbolic Link
+Dit zijn een soort pointer files die naar een ander bestand wijzen. Dit is een nieuwe inode en datablok. Het datablok bevat nu het padnaam van een bestaand file object.
+
+Deze maken we aan door `-s` te gebruiken:
+
+```bash
+ln -s dest source
+```
+
+Merk op dat symlink en hardlinks totaal anders werken (logisch?).
+
+##### 6.3.3.2. Hard Link
+Assoscieert 2 of meer filenamen met dezelfde inode. Dit kan men doen door volgend commando:
+
+```bash
+ln source dest
+```
+
+#### 6.3.4. Device of special files
+Speciale interface om input/output devices te benaderen als bestanden.
+
+(probeer: `date >/dev/pts/2`)
+
+we hebben 2 soorten special files:
+
+* Character special files: I/O verloopt op karaktergeorienteerde of ruwe en onbehandelde niet gebufferde basis. Typisch voorbeeld zijn de consoleschermen. Dit filetype wordt aangeduid met een `c`.
+*Block special files: I/O verloopt in vaste lengtes, wordt aangeduid met een `b`.
+
+Men kan device files aanmaken door:
+
+```bash
+mknod [c\b] majornr minornr filenaam
+```
+
+waarbij de majornr en minornr de referentie naar de echte device drivers zijn.
+
+`hdparm` toont de info over de harddisk:
+
+```bash
+/sbin/hdparm -i /dev/hda
+```
+
+#### 6.3.5. Sockets
+File dat gebruikt wordt voor communicatie tussen processen, maakt ook deel uit van TCP/IP functionaliteit.
+
+/dev/printer wordt bv gebruikt als socket die berichten naar de printer daemon kan sturen.
+
+#### 6.3.6. Named Pipes
+andere manier voor inter process communication.
