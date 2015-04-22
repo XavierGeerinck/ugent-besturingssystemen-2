@@ -975,3 +975,6 @@ int main(int argc, char** argv) {
 |`set | grep ^IFS`|Toont IFS waarde.|
 |`t=$(du /etc/passwd)`|Dit gaat de STDOUT van commando toekennen aan een variabele.|
 |t=``du /etc/passwd``|Dit gaat de STDOUT van commando toekennen aan een variabele.|
+|`echo $((5 + 5))`|Dit gaat 10 printen, $(()) staat voor Arithmetic Expansion en gaat de rekensom uitvoeren.|
+|`SECONDS=0;ls -IR /> /dev/null 2>&1;sleep 5;echo "This took: $SECONDS seconds"`|Gaat uitvoeringstijd berekenen met $SECONDS|
+|`shift N`|Gaat input params opschuiven met N, vb: 10 input parameters $1 - $10, $5 wordt $1, $6 $2, $7 $3, ... als shift 4|
