@@ -978,3 +978,4 @@ int main(int argc, char** argv) {
 |`echo $((5 + 5))`|Dit gaat 10 printen, $(()) staat voor Arithmetic Expansion en gaat de rekensom uitvoeren.|
 |`SECONDS=0;ls -IR /> /dev/null 2>&1;sleep 5;echo "This took: $SECONDS seconds"`|Gaat uitvoeringstijd berekenen met $SECONDS|
 |`shift N`|Gaat input params opschuiven met N, vb: 10 input parameters $1 - $10, $5 wordt $1, $6 $2, $7 $3, ... als shift 4|
+|x='dit is een <b>eenvoudige</b> en <b>nuttige</b> oefening'||
