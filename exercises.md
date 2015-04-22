@@ -970,4 +970,8 @@ int main(int argc, char** argv) {
 |`echo $RANDOM`|Random getal|
 |`echo $PS1`|Current prompt (hoe het er uit ziet)|
 |`echo $PS2`|Continuation prompt (hoe het er uit ziet)|
-|||
+|`cd -`|Switch tussen 2 directories! (GODLY)|
+|`read a b c d`|Laat ons toe om meerdere variabelen in te lezen, **note: ** hier gebruiken we dus spaties tussen elke ingevoerde waarde.|
+|`set | grep ^IFS`|Toont IFS waarde.|
+|`t=$(du /etc/passwd)`|Dit gaat de STDOUT van commando toekennen aan een variabele.|
+|t=``du /etc/passwd``|Dit gaat de STDOUT van commando toekennen aan een variabele.|
