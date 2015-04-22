@@ -963,3 +963,11 @@ int main(int argc, char** argv) {
 |`find /usr -type f -name "*.h" -printf "%h\n" \| sort \| uniq`|Toont alle directories zonder duplicaten die header files bevatten.|
 |`find / -type d 2>&1 >/dev/null | cut -d : -f2`|Toont alle bestanden waar we geen toegang tot hebben|
 |`find /bin -type f -perm -u=r,-u=w,-u=x`|Toont bestanden waarvoor de huidige gebruiker write, execute en read mogelijkheden heeft.|
+|Difference between ${} and $()|${} will use the variable and $() will execute the command within the braces|
+|`een=random;twee=een;echo ${!twee}`|Dit gaat random tonen, dit omdat twee verwijst naar een.|
+|`echo $SECONDS`|Aantal seconden dat het script aan het draaien is|
+|`echo $PWD`|Print Working Directory|
+|`echo $RANDOM`|Random getal|
+|`echo $PS1`|Current prompt (hoe het er uit ziet)|
+|`echo $PS2`|Continuation prompt (hoe het er uit ziet)|
+|||
