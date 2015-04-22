@@ -317,3 +317,23 @@ while read username password userid rest
 	done < /etc/passwd
 echo $maxuid
 ```
+
+
+### 4.16 Speciale Variabelen Patterns
+|Pattern|Bash Min. Versie|Betekenis|
+|-------|-----------|---------|
+|`$(#variabele)`|Bash v1|Geeft lengte van de waarde van de variabele in karakters|
+|`$(variabele#pattern)`|Bash v1|Verwijdert de korst mogelijke substring vooraan de variabele die aan het pattern voldoet|
+|`${variabele##pattern}`|Bash v1|Verwijdert de langst mogelijke substring vooraan de variabele die aan het pattern voldoet|
+|`${variabele%pattern}`|Bash v1|Verwijdert de korst mogelijke substring achteraan de variabele die aan het pattern voldoet|
+|`${variabele%%pattern}`|Bash v1|Verwijdert de langst mogelijke substring achteraan de variabele die aan het pattern voldoet|
+|`${variabele:offset}`|Bash v2|Geeft de deelstring vanaf positie offset|
+|`${variabele:offset:length}`|Bash v2|Geef de deelstring vanaf positie offset met length tekens|
+|`${variabele/pattern/string}`|Bash v2|Geeft de string die ontstaat als je in de variabele de eerste en langste substring die aan het pattern voldoet, vervangt door string|
+|`${variabele//pattern/string}`|Bash v2|Geeft de string die ontstaat als je in de variabele alle substring die aan het pattern voldoen, vervangt door string|
+|`${variabele/#pattern/string}`|Bash v2|Geeft de string die ontstaat als je de langste substring vooraan de variabele, die aan pattern voldoet, vervangt doot string.|
+|`${variabele/%pattern/string}`|Bash v2|Geeft de string die ontstaat als je de langste substring achteraan de variabele, die aan pattern voldoet, vervangt door string.|
+|`${variabele^}`|Bash v4|Converteert de eerste letter van de string naar uppercase|
+|`${variabele,}`|Bash v4|Converteert de eerste letter van de string naar lowercase|
+|`${variabele^^}`|Bash v4|Converteert de volledige string naar uppercase|
+|`${variabele,,}`|Bash v4|Converteert de volledige string naar lowercase|
