@@ -161,5 +161,31 @@ Zorg ervoor dat het script onafhankelijk is van de precieze foutboodschappen die
 
 ### Oplossing
 ```bash
+#!/bin/bash
+# Array to keep the NOT active hosts
+declare -a ARRAY
+i=0 # Index of the array
+hosts=0
 
+# Loop through the lines
+while read -r p1 p2 p3 p4
+do
+#       echo "P1: "$p1 "P2: " $p2 "P3: " $p3 "P4: "$p4
+
+        #  If ping start, then add to array of not active hosts
+        if [ "$p1" == "C:\WINNT35\system32>ping" ]; then
+                ARRAY[i]=$p4
+                hosts=$(($hosts + 1))
+        fi
+
+        # If p1 = Request timed out, then see this as a non active pc
+        if [ "$p1" == "Request" -a "$p2" == "timed" ]; then
+                i=$(($i + 1))
+        fi
+done < $1
+
+active_hosts=$(($hosts - ($i + 1)))
+echo "Total Hosts: $hosts"
+echo "Active Hosts: $active_hosts"
+echo "Not Active Hosts: $(($i + 1))"
 ```
