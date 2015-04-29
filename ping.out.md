@@ -1,73 +1,73 @@
-
-C:\WINNT35\system32>ping -n 1 AL005951
-
-Pinging AL005951 [141.96.126.137] with 32 bytes of data:
-
-Reply from 141.96.126.137: bytes=32 time=1322ms TTL=124
-
-C:\WINNT35\system32>ping -n 1 AL005952
-
-Pinging AL005952 [141.96.126.138] with 32 bytes of data:
-
-Reply from 141.96.126.138: bytes=32 time=1762ms TTL=124
-
-C:\WINNT35\system32>ping -n 1 AL006152
-
-Pinging AL006152 [141.96.125.106] with 32 bytes of data:
-
-Reply from 141.96.125.106: bytes=32 time=160ms TTL=124
-
-C:\WINNT35\system32>ping -n 1 AL015751
-
-Pinging AL015751 [141.96.125.89] with 32 bytes of data:
-
-Reply from 141.96.125.89: bytes=32 time=231ms TTL=124
-
-C:\WINNT35\system32>ping -n 1 AL016151
-
-Pinging AL016151 [141.96.125.217] with 32 bytes of data:
-
-Reply from 141.96.125.217: bytes=32 time=180ms TTL=124
-
-C:\WINNT35\system32>ping -n 1 AL024251
-
-Pinging AL024251 [141.96.125.153] with 32 bytes of data:
-
-Reply from 141.96.125.153: bytes=32 time=1602ms TTL=123
-
-C:\WINNT35\system32>ping -n 1 AL025851
-
-Pinging AL025851 [141.96.125.137] with 32 bytes of data:
-
-Request timed out.
-
-C:\WINNT35\system32>ping -n 1 AL031051
-
-Pinging AL031051 [141.96.126.169] with 32 bytes of data:
-
-Reply from 141.96.126.169: bytes=32 time=230ms TTL=124
-
-C:\WINNT35\system32>ping -n 1 AL031052
-
-Pinging AL031052 [141.96.126.170] with 32 bytes of data:
-
-Reply from 141.96.126.170: bytes=32 time=311ms TTL=124
-
-C:\WINNT35\system32>ping -n 1 AL033551
-
-Pinging AL033551 [141.96.125.185] with 32 bytes of data:
-
-Request timed out.
-
-C:\WINNT35\system32>ping -n 1 AL034551
-
-Pinging AL034551 [141.96.125.9] with 32 bytes of data:
-
-Reply from 141.96.125.9: bytes=32 time=200ms TTL=124
-
-C:\WINNT35\system32>ping -n 1 AL035251
-
-Pinging AL035251 [141.96.126.233] with 32 bytes of data:
+    
+    C:\WINNT35\system32>ping -n 1 AL005951
+    
+    Pinging AL005951 [141.96.126.137] with 32 bytes of data:
+    
+    Reply from 141.96.126.137: bytes=32 time=1322ms TTL=124
+    
+    C:\WINNT35\system32>ping -n 1 AL005952
+    
+    Pinging AL005952 [141.96.126.138] with 32 bytes of data:
+    
+    Reply from 141.96.126.138: bytes=32 time=1762ms TTL=124
+    
+    C:\WINNT35\system32>ping -n 1 AL006152
+    
+    Pinging AL006152 [141.96.125.106] with 32 bytes of data:
+    
+    Reply from 141.96.125.106: bytes=32 time=160ms TTL=124
+    
+    C:\WINNT35\system32>ping -n 1 AL015751
+    
+    Pinging AL015751 [141.96.125.89] with 32 bytes of data:
+    
+    Reply from 141.96.125.89: bytes=32 time=231ms TTL=124
+    
+    C:\WINNT35\system32>ping -n 1 AL016151
+    
+    Pinging AL016151 [141.96.125.217] with 32 bytes of data:
+    
+    Reply from 141.96.125.217: bytes=32 time=180ms TTL=124
+    
+    C:\WINNT35\system32>ping -n 1 AL024251
+    
+    Pinging AL024251 [141.96.125.153] with 32 bytes of data:
+    
+    Reply from 141.96.125.153: bytes=32 time=1602ms TTL=123
+    
+    C:\WINNT35\system32>ping -n 1 AL025851
+    
+    Pinging AL025851 [141.96.125.137] with 32 bytes of data:
+    
+    Request timed out.
+    
+    C:\WINNT35\system32>ping -n 1 AL031051
+    
+    Pinging AL031051 [141.96.126.169] with 32 bytes of data:
+    
+    Reply from 141.96.126.169: bytes=32 time=230ms TTL=124
+    
+    C:\WINNT35\system32>ping -n 1 AL031052
+    
+    Pinging AL031052 [141.96.126.170] with 32 bytes of data:
+    
+    Reply from 141.96.126.170: bytes=32 time=311ms TTL=124
+    
+    C:\WINNT35\system32>ping -n 1 AL033551
+    
+    Pinging AL033551 [141.96.125.185] with 32 bytes of data:
+    
+    Request timed out.
+    
+    C:\WINNT35\system32>ping -n 1 AL034551
+    
+    Pinging AL034551 [141.96.125.9] with 32 bytes of data:
+    
+    Reply from 141.96.125.9: bytes=32 time=200ms TTL=124
+    
+    C:\WINNT35\system32>ping -n 1 AL035251
+    
+    Pinging AL035251 [141.96.126.233] with 32 bytes of data:
 
 Reply from 141.96.126.233: bytes=32 time=230ms TTL=124
 
