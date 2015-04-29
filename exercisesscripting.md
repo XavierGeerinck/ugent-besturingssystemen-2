@@ -65,14 +65,29 @@ ID (veld 3 van /etc/passwd) dat je als (enige) parameter aan het script meegegev
 
 ### Oplossing
 ```bash
+# Oplossing met cut
+grep -E '^.*:.*:172:.*$' /etc/passwd | cut -d ':' -f 1
 
+# Oplossing met read
+grep -E '^.*:.*:172:.*$' /etc/passwd | { IFS=: ; read naam rest; echo $naam; }
 ```
 
 ## # 92
 ### Vraag
+Ontwikkel een script dat het commando tail n simuleert. Als eerste argument moet een bestandsnaam opgegeven worden en als tweede argument mag het aantal regels
+opgegeven worden. Ontbreekt het tweede argument, dan worden de 10 laatste regels weergegeven. Realiseer dit op twee manieren:
+
+* Gebruik een while-lus met een read-commando om het bestand te overlopen en een array om de gegevens cyclisch op te slaan.
+* Gebruik geen array, maar bepaal vooraf het aantal lijnen van het bestand. 
 
 
 ### Oplossing
+#### While-lus met read-commando
+```bash
+
+```
+
+#### Vooraf bepaalde aantal lijnen
 ```bash
 
 ```
