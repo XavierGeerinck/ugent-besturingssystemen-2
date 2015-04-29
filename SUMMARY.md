@@ -8,5 +8,5 @@
 * [5. Users](users_and_the_internal_filesystem.md)
 * [6. Internal Filesystem](6_internal_filesystem.md)
 * [Exercises](exercises.md)
-* ExercisesScripting
+* [ExercisesScripting](exercisesscripting.md)
 
