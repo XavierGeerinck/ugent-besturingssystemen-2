@@ -189,3 +189,51 @@ echo "Total Hosts: $hosts"
 echo "Active Hosts: $active_hosts"
 echo "Not Active Hosts: $(($i + 1))"
 ```
+
+## # 95
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 96
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 97
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 98
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 99
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 100
+### Vraag
+
+### Oplossing
+```bash
+
+```
