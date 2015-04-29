@@ -192,9 +192,14 @@ echo "Not Active Hosts: $(($i + 1))"
 
 ## # 95
 ### Vraag
+Gebruik (enkel) het bestand /etc/passwd om voor alle groepsnummers het aantal gebruikers met hetzelfde primaire groepsnummer te tellen. Realiseer dit op twee manieren:
+* Gebruik een while-lus met een read-commando om het bestand te overlopen en arrays om de gegevens op te slaan.
+* Sla eerst de gegevens geordend op in een tijdelijk bestand, en verwerk vervolgens dit bestand. 
 
 ### Oplossing
 ```bash
+# TODO
+cat /etc/passwd | { IFS=: read -r user x uid gid rest; echo $rest; }
 
 ```
 
