@@ -36,3 +36,4 @@ Een proces wordt aangemaakt door een systeem call naar `fork()` te doen. Dit gaa
 ![1.jpg](1.jpg)
 
 **Voorbeeld:** uitvoering van het gegroepeerde commando `(ls;date)`
+![2.jpg](2.jpg)
