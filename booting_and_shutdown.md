@@ -1,2 +1,2 @@
-# Booting and Shutdown
+# 8. Booting and Shutdown
 
