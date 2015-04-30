@@ -56,3 +56,4 @@ Bij piping worden onmiddelijk 2 processen geforked. Het laatste command start me
 
 ![4.jpg](4.jpg)
 
+De ultieme voorouder van alle processen is het proces met PID=1. Dit is het init proces en wordt opgestart bij de boot.
