@@ -32,5 +32,5 @@ Een proces wordt aangemaakt door een systeem call naar `fork()` te doen. Dit gaa
 8. Child roept `exit()` op als deze klaar is.
 9. Parent ziet dat child klaar is en gaat verder.
 
-**Voorbeeld:** uitvoering van het commando `ls`
+**Voorbeeld:** uitvoering van het commando `ls;date`
 ![1.jpg](1.jpg)
