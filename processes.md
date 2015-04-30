@@ -63,3 +63,5 @@ Om een job uiteindelijk op te starten in de achtergrond en ervoor te zorgen dat 
 ```bash
 nohup job  &
 ```
+
+## 7.5. Signalen en het verwijderen van processen
