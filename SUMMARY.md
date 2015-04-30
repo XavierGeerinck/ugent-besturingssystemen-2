@@ -9,7 +9,7 @@
 * [6. Internal Filesystem](6_internal_filesystem.md)
 * [7. Processes](processes.md)
 * [Booting and Shutdown](booting_and_shutdown.md)
+* [Utilities](utilities.md)
 * [Exercises](exercises.md)
 * [ExercisesScripting](exercisesscripting.md)
-* [Utilities](utilities.md)
 
