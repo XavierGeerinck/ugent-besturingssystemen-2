@@ -52,5 +52,7 @@ Bij een gegroepeerd commando ligt dit net iets anders. Bash gaat een fork uitvoe
 
 **Voorbeeld:** Piping who aan sort `who|sort`
 
+Bij piping worden onmiddelijk 2 processen geforked. Het laatste command start men als eerste, zo voort tot alle processen zijn opgestart. Deze commando's gaan nu op hen input lijn lezen naar input.
+
 ![4.jpg](4.jpg)
 
