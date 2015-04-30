@@ -18,3 +18,32 @@
 Alle opstart meldingen die op het console verschijnen worden bijgehouden. De functionaliteit die deze controleerd is de *syslogd* daemon en/of de *dmesg* utility. Deze meldingen vinden we terug in */usr/adm/messages* of in */var/adm/messages* of */var/log/messages*.
 
 ## 8.2. Systeemstatus of runlevel
+Er zijn 3 systeemstatussen:
+* uitgeschakeld
+* multi user mode
+* single uer mode
+
+Ook zijn er verschillende runlevels, deze bepalen wat er kan gebeuren op het systeem.
+
+
+|runlevel|Betekenis|
+|:-:|-|
+|0|powerdown: veilige conditie om spanning af te leggen|
+|1|systeemadminstratie modus|
+|S of s|single user mode|
+|2|multi user mode zonder netwerk|
+|3|multi user met netwerk|
+|4|door admin te definieren status, niet gebruikt standaard|
+|5|firmware state: speciale onderhoudsmodus|
+|6|shutdown en reboot status: gebruikt om opnieuw op te starten.|
+
+De betekenis van deze runlevels staat meestal vermeld in het bestand */etc/inittab*.
+
+## 8.3. Activering en organisatie van de opstartscripts
+### 8.3.1. Configuratie van init /etc/inittab
+Deze file bepaalt de activiteiten die het init-proces zal uitvoeren. Voor de betekenis zie deze file.
+
+De file wordt geformatteerd in `label:runlevel:actie:proces` volgorde.
+
+### 8.3.2. Hierarchie
+De scripts die worden geladen on boot vinden we of terug in */etc/rc\** of in */etc/rd.c*. Door gebruik te maken van het commando `ls  -Rp rc.d` in de */etc* dir kunnen we een recursieve lijst bekomen met alle scripts.
