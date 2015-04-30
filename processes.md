@@ -34,6 +34,8 @@ Een proces wordt aangemaakt door een systeem call naar `fork()` te doen. Dit gaa
 
 **Voorbeeld:** uitvoering van het commando `ls`
 
+Hier zien we dat bash een fork gaat maken om ls uit te voeren. ls gaat dan exec uitvoeren en uiteindelijk het werkelijke commando. Bash wacht nu tot ls exit oproept vooraleer verder te gaan.
+
 ![3.jpg](3.jpg)
 
 **Voorbeeld:** uitvoering van het commando `ls;date`
