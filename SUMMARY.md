@@ -10,5 +10,5 @@
 * [7. Processes](processes.md)
 * [Exercises](exercises.md)
 * [ExercisesScripting](exercisesscripting.md)
-* Booting and Shutdown
+* [Booting and Shutdown](booting_and_shutdown.md)
 
