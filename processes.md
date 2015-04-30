@@ -40,9 +40,13 @@ Hier zien we dat bash een fork gaat maken om ls uit te voeren. ls gaat dan exec 
 
 **Voorbeeld:** uitvoering van het commando `ls;date`
 
+Bij 2 commando's na elkaar is dit juist hetzelfde maar deze worden dan na elkaar uitgevoerd.
+
 ![1.jpg](1.jpg)
 
 **Voorbeeld:** uitvoering van het gegroepeerde commando `(ls;date)`
+
+Bij een gegroepeerd commando ligt dit net iets anders. Bash gaat een fork uitvoeren maar in deze fork worden beide commando's uitgevoerd. We krijgen dus een parent (bash) die een child aanmaakt. Deze child maakt dan een nieuwe child aan die het commando zelf gaat uitvoeren.
 
 ![2.jpg](2.jpg)
 
