@@ -8,7 +8,7 @@
 * [5. Users](users_and_the_internal_filesystem.md)
 * [6. Internal Filesystem](6_internal_filesystem.md)
 * [7. Processes](processes.md)
+* [Booting and Shutdown](booting_and_shutdown.md)
 * [Exercises](exercises.md)
 * [ExercisesScripting](exercisesscripting.md)
-* [Booting and Shutdown](booting_and_shutdown.md)
 
