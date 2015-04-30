@@ -47,3 +47,31 @@ De file wordt geformatteerd in `label:runlevel:actie:proces` volgorde.
 
 ### 8.3.2. Hierarchie
 De scripts die worden geladen on boot vinden we of terug in */etc/rc\** of in */etc/rd.c*. Door gebruik te maken van het commando `ls  -Rp rc.d` in de */etc* dir kunnen we een recursieve lijst bekomen met alle scripts.
+
+Merk op dat de dir *rc[0..6].d* gebruikt wordt. Het cijfer hier staat voor het gebruikte runlevel.
+
+### 8.3.3. /etc/rc.d/rc.sysinit
+Deze file zegt bijvoorbeeld dat de swap-partities moeten geactieveerd worden, de coputernaam geinitialisserd en dat men het root-filesysteem moet controleren met *fsck*.
+
+Het *fsck* utility verzekert dat de datastructuren in de superblokken van de diskpartities en de inodetabellen consistent zijn met datgene wat in de directory-entry's en de bezette-diskblokken-tabel van het filesysteem terug te vinden is. Als er inconsitenties zijn worden deze gecorrigeert.
+
+Als er files en/of directory's gevonden zijn die deze niet kan plaatsen worden deze in /lost+found gezet.
+
+### 8.3.4. /etc/rc.d/rc
+Deze file gaat als argument het runlevel meekrijgen. Dit gaat dan verder de rc[0-6].d directories uitlezen en de scripts daarin uitvoeren.
+
+### 8.3.5. halt
+Zie script
+
+### 8.3.6. Overzicht van enkele network daemons
+Zie netwerken (voorbeelden zijn: httpd, inet, network, nfsfs, routed, rusersd, rwhod, sendmail, smb)
+
+## 8.4. Afsluiten van een UNIX systeem
+1. Alle gebruikers worden op de hoogte gebracht
+2. Alle processen krijgen een SIGTERM signaal
+3. Alle sub-systemen worden stilgelegd.
+4. Alle overblijvende gebruikers worden uitgelogd.
+5. Integriteit filesysteem wordt gegarandeerd.
+6. Er wordt naar afgesloten, naar single user mode gegaan of opnieuw opgestart.
+
+Voor af te sluiten voorziet men het commando `shutdown`.
