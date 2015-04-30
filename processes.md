@@ -33,4 +33,4 @@ Een proces wordt aangemaakt door een systeem call naar `fork()` te doen. Dit gaa
 9. Parent ziet dat child klaar is en gaat verder.
 
 **Voorbeeld:** uitvoering van het commando `ls`
-!(1.jpg)[1.jpg]
+![1.jpg](1.jpg)
