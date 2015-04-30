@@ -11,5 +11,5 @@
 * [Booting and Shutdown](booting_and_shutdown.md)
 * [Exercises](exercises.md)
 * [ExercisesScripting](exercisesscripting.md)
-* Utilities
+* [Utilities](utilities.md)
 
