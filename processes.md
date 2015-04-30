@@ -75,7 +75,7 @@ Bij het verzenden van een signaal kan een proces op 3 manieren reageren:
 **Overzicht signalen:**
 
 |Signaal|Nr|Standaard actie|Betekenis|
-|-|-|-|-|
+|-|:-:|-|-|
 |SIGHUP|1|einde|Hangup: verbinding terminal verbroken|
 |SIGINT|2|einde|Interrupt: break is ingevoerd in de terminal (CTRL-C)|
 |SIGQUIT|3|einde + geheugendump|quit: DEL toests of CTRL-\ met de bedoeling voor geheugeninhoud te verkrijgen.|
