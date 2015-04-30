@@ -65,4 +65,22 @@ nohup job  &
 ```
 
 ## 7.5. Signalen en het verwijderen van processen
+Een signaal kunnen we verwijderen met het `kill` commando. Echter is dit algemener en dient het om signalen naar processen te sturen.
+
+Bij het verzenden van een signaal kan een proces op 3 manieren reageren:
+* Het proces heeft een functie die het signaal opvangt en dan een actie uitvoert.
+* De standaardactie wordt uitgevoerd.
+* Het signaal kan worden genegeerd. Echter het signaal SIGKILL en SIGSTOP kunnen niet worden genegeerd.
+
+Overzicht signalen:
+
+|Signaal|Nr|Standaard actie|Betekenis|
+|SIGHUP|1|einde|Hangup: verbinding terminal verbroken|
+|SIGINT|2|einde|Interrupt: break is ingevoerd in de terminal (CTRL-C)|
+|SIGQUIT|3|einde + geheugendump|quit: DEL toests of CTRL-\ met de bedoeling voor geheugeninhoud te verkrijgen.|
+|SIGKILL|9|einde|Kill process, kan niet worden opgevangen of geblokkeerd|
+|SIGTERM|15|Terminate: Beindig proces zo snel mogelijk, het kan nog wel dingen afwerken (sluiten bestanden, ...)|
+|SIGSTP|24|stop|Betekent het indrukken van de job-cotnrole toets stop (CTRL-Z)|
+
+
 ## 7.6. Opvangen van signalen in de shell
