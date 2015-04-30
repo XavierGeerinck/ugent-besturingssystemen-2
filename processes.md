@@ -83,5 +83,10 @@ Bij het verzenden van een signaal kan een proces op 3 manieren reageren:
 |SIGTERM|15|Terminate: Beindig proces zo snel mogelijk, het kan nog wel dingen afwerken (sluiten bestanden, ...)|
 |SIGSTP|24|stop|Betekent het indrukken van de job-cotnrole toets stop (CTRL-Z)|
 
+Er zijn echter processen die niet gestopt kunnen worden:
+
+* **Zombies:** Deze worden aangeduid met een 'Z'. Dit komt voor als een child de parent niet verwittigd heeft dat het klaar was, en zijn PID nog in de procestabel zit.
+* **Processen die wachten op niet beschikbare NFS-bronnen:** Om deze te stoppen moet men signalen2 of 3 gebruiken.
+* **Processen die wachten tot een device klaar is:** Als men bv een backup aan het terugzetten is tijdens het terugspoelen vande band in een tape-drive.
 
 ## 7.6. Opvangen van signalen in de shell
