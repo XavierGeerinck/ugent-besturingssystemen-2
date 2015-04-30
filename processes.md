@@ -65,3 +65,4 @@ nohup job  &
 ```
 
 ## 7.5. Signalen en het verwijderen van processen
+## 7.6 Opvangen van signalen in de shell
