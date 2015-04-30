@@ -90,3 +90,36 @@ Er zijn echter processen die niet gestopt kunnen worden:
 * **Processen die wachten tot een device klaar is:** Als men bv een backup aan het terugzetten is tijdens het terugspoelen vande band in een tape-drive.
 
 ## 7.6. Opvangen van signalen in de shell
+Het `trap` commando kan signalen opvangen. 
+
+```bash
+# Gebruik
+trap rij-van-commando's lijst-van-signaalnummers
+
+# vb
+trap 'rm -f $nieuw $oud; exit 1' 1 2 15
+```
+
+Voorbeeld gebruik van trap: Een programma dat de shell locked. Dit wacht op een wachtwoord en moet worden bevestigd.
+
+```bash
+trap '' 1 2 3 18 20 24 # laatste 3 om ctr-z op te vangen
+stty -echo             # vermijdt tekens op scherm bij intypen
+echo -n "Geef sleutel: "
+read sl1
+echo -n "Nog een keer: "
+read sl2
+echo sl3=
+if [ "$sl1" = "$sl2" ]
+    then
+        tput clear
+        while [ "$sl1" != "$sl3" ]
+            do
+            read sl3
+        done
+    else
+        echo "Sleutels komen niet overeen" 1>&2
+fi
+stty echo
+```
+
