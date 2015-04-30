@@ -33,13 +33,18 @@ Een proces wordt aangemaakt door een systeem call naar `fork()` te doen. Dit gaa
 9. Parent ziet dat child klaar is en gaat verder.
 
 **Voorbeeld:** uitvoering van het commando `ls`
+
 ![3.jpg](3.jpg)
 
 **Voorbeeld:** uitvoering van het commando `ls;date`
+
 ![1.jpg](1.jpg)
 
 **Voorbeeld:** uitvoering van het gegroepeerde commando `(ls;date)`
+
 ![2.jpg](2.jpg)
 
 **Voorbeeld:** Piping who aan sort `who|sort`
+
 ![4.jpg](4.jpg)
+
