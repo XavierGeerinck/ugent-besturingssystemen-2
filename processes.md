@@ -57,3 +57,9 @@ Bij piping worden onmiddelijk 2 processen geforked. Het laatste command start me
 ![4.jpg](4.jpg)
 
 De ultieme voorouder van alle processen is het proces met PID=1. Dit is het init proces en wordt opgestart bij de boot.
+
+Om een job uiteindelijk op te starten in de achtergrond en ervoor te zorgen dat deze niet afsluit nadat men de TTY afsluit kan men gebruik maken van het `nohup` commando.
+
+```bash
+nohup job  &
+```
