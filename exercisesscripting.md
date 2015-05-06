@@ -283,3 +283,12 @@ echo "TOTAL_FILES: $total_files"
 ```bash
 
 ```
+
+TIPS
+1.
+echo ${tab[@]} | xargs -n1
+
+Neem het 1ste element van standaard uitvoer en echo
+
+2.
+parallel doet hetzelfde als xargs, maar gebruikt alle CPUs'
