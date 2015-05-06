@@ -198,17 +198,42 @@ Gebruik (enkel) het bestand /etc/passwd om voor alle groepsnummers het aantal ge
 
 ### Oplossing
 ```bash
-# TODO
-cat /etc/passwd | { IFS=: read -r user x uid gid rest; echo $rest; }
+#!/bin/bash
+declare -a ARRAY
 
+while IFS=: read -r username pass uid gid rest 
+do
+        ARRAY[$gid]=$((ARRAY[$gid] + 1))
+
+done < /etc/passwd
+
+for el in ${!ARRAY[@]}
+do
+        echo $el : ${ARRAY[$el]}
+done
 ```
 
 ## # 96
 ### Vraag
+Gebruik de bestanden /etc/group en /etc/passwd om een overzicht te maken van alle groepen, gevolgd door de volledige lijst van gebruikers die deze groep als primaire groep hebben. Gebruik een while-lus met een read-commando om het bestand /etc/group te overlopen en grep om de gebruikers op te sporen.
 
 ### Oplossing
 ```bash
+#!/bin/bash
+declare -a ARRAY
 
+while IFS=: read -r name pass gid rest 
+do
+	# Print de naam van de group
+	echo $name
+
+	# Print gebruikers door middel van grep in /etc/passwd
+	grep -E ".*:.*:.*:${gid}:.*" /etc/passwd | while IFS=: read -r pname ppass puid pgid prest
+	do
+		echo "USER: $pname"
+	done
+	echo ""
+done < /etc/passwd
 ```
 
 ## # 97
