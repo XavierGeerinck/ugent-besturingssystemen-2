@@ -110,6 +110,7 @@ tabel2=(waarde1 waarde2 waarde3) #tabel2[0], tabel[1] en tabel[2] zijn set
 tabel3=(waarde1 [2]=waarde2 "waarde3 met spatie" #tabel3[0] = waarde1, tabel[1]=undefined, tabel[2]=waarde2, tabel[3]=waarde3
 echo ${tabel[0]} # Print index 0
 echo ${tabel[*]} # Print alle waarden
+echo ${!tabel[@]} # Print de keys
 echo ${#tabel[*]} # Print lengte van aant ingevulde elementen
 echo ${#tabel[0]} # Print lengte van elementwaarde
 ```
