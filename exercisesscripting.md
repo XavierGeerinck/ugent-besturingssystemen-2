@@ -309,6 +309,94 @@ Ontwikkel een script dat alle parameters uitschrijft die meer dan één keer voo
 
 ```
 
+## # 101
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 102
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 103
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 104
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 105
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 106
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 107
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 108
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 109
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 110
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
+## # 111
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
 TIPS
 1.
 echo ${tab[@]} | xargs -n1
