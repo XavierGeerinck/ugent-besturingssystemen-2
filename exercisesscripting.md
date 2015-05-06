@@ -266,7 +266,27 @@ Ontwikkel een script met als parameters een bestandnaam en een willekeurig aanta
 
 ### Oplossing
 ```bash
+#!/bin/bash
+echo "Finding words in $1 param count = $#"
 
+file=$1
+
+shift 1
+for ARG in $*
+do
+	echo "Finding lines with $1"
+
+	IFS=$'\n'
+
+	for line in `grep -E "^.*$1.*$" $file`
+	do
+		printf "Line: $line\n\n"
+	done
+	
+	shift 1
+
+	printf "\n\n"
+done
 ```
 
 ## # 99
