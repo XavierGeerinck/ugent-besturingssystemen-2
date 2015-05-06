@@ -315,7 +315,23 @@ Ontwikkel een script dat een beperkte versie van het commando wc simuleert. Het 
 
 ### Oplossing
 ```bash
+#!/bin/bash
+lines=0
 
+for ARG in $*
+do
+	# Read lines
+	while IFS=$'\n' read -r line
+	do
+		((lines++))
+	done < $1
+
+	echo "$lines $1"
+
+	# Next
+	lines=0
+	shift 1
+done
 ```
 
 ## # 102
