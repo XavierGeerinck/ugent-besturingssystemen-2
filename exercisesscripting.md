@@ -311,6 +311,7 @@ Ontwikkel een script dat alle parameters uitschrijft die meer dan één keer voo
 
 ## # 101
 ### Vraag
+Ontwikkel een script dat een beperkte versie van het commando wc simuleert. Het script moet het aantal regels en de bestandsnaam afdrukken van elk bestand dat als parame ter meegegeven wordt. Het script mag enkel interne Bash - instructies ( if , for , case , let , while , read enz.) gebruiken, en behalve echo geen externe commando's; het gebruik van awk , sed , perl en wc in het bijzonder is niet toegelaten. Je zult bijgevolg elk bestand regel voor regel moeten inlezen en deze tellen. Het script moet bovendien een samenvattende regel weergeven met het totale aantal regels. Indien geen enkele parameter meegegeven wordt, neem je alle bestanden in de huidige werkdirectory in beschouwing. Los dit zo beknopt mogelijk op met de speciale notaties voor shell - variabelen.
 
 ### Oplossing
 ```bash
