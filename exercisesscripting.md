@@ -262,6 +262,7 @@ echo "TOTAL_FILES: $total_files"
 
 ## # 98
 ### Vraag
+Ontwikkel een script met als parameters een bestandnaam en een willekeurig aantal strings(minstens één). Alle stringparameters die voorkomen in het bestand moeten regel voor regel naar standaarduitvoer worden weggeschreven; de volgorde is hierbij niet van belang.
 
 ### Oplossing
 ```bash
