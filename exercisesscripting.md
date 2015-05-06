@@ -55,7 +55,7 @@ Wat moet je doen opdat de read - instructie lijnen niet alleen in woorden zou op
 
 ### Oplossing
 ```bash
-
+cat /etc/passwd | { IFS=: read -r user x uid gid rest; echo $rest; }
 ```
 
 ## # 91
