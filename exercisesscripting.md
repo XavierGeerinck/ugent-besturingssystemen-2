@@ -291,6 +291,9 @@ done
 
 ## # 99
 ### Vraag
+Bepaal voor een groep, waarvan het groepsnummer als enige parameter wordt meegegeven, de volledige lijst van gebruikersaccounts die behoren tot deze groep (ook als niet - primaire groep). Construeer twee oplossingen: 
+* Schrijf eerst alle gebruikersnamen weg naar een tijdelijk bestand; dubbels zijn voorlopig toegestaan. Filter vervolgens de dubbels hieruit en schrijf de resulterende gebruikerslijst uit. 
+* Gebruik een associatieve array, met de gebruikersnamen als sleutels
 
 ### Oplossing
 ```bash
