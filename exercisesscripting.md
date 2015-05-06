@@ -238,11 +238,27 @@ done < /etc/passwd
 
 ## # 97
 ### Vraag
+Ontwikkel een script met juist twee parameters. De eerste parameter is de naam van een directory tree, de tweede parameter stelt een aantal bytes voor. Het script genereert de naam van alle bestanden in de direc tory tree waarvan de grootte de waarde van de tweede parameter overschrijdt. Bovendien wordt het totale aantal bestanden dat aan deze voorwaarde voldoet en het totale aantal bytes in deze bestanden gerapporteerd. Tip: Gebruik het find-commando met passende opties om de individuele bestanden te vinden. Gebruik de optie - printf om de noodzakelijke informatie op te vragen tijdens het zoeken 
 
 ### Oplossing
 ```bash
+#!/bin/bash
+echo "Searching for files in $1 and bigger than $2 bytes"
 
+find $1 -size +$2c -printf "%p:%s\n" | { while IFS=: read -r file size 
+do
+	((total_size+=size))
+	((total_files++))
+
+printf "SIZE %10d FILE %s\n" $size $file
+done
+
+echo "TOTAL SIZE: $total_size"
+echo "TOTAL_FILES: $total_files"
+}
 ```
+
+> Zie de { } voor het sub shell gebruik!
 
 ## # 98
 ### Vraag
