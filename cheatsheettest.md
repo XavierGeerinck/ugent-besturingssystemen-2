@@ -12,4 +12,5 @@
 |open|open en mogelijks create een bestand of device|`int open(const char*pathname, int flags, mode_t mode)`|
 |clock|vraagt de tijd op|clock()|
 |CLOCKS_PER_SEC|clock ticks per seconde global variabele||
+|malloc|assign geheugen, vergeet free niet te doen||
 ## Bash
