@@ -83,5 +83,32 @@
     
         return 0;
     }
+    
+#### 2. Forking
+#include <unistd.h>
+#include <sys/types.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    pid_t pid;
+
+    // Create 3 childs
+    for (int i = 0; i < 3; i++) {
+        if ((pid = fork()) < 0) {
+            // Error
+            perror(argv[0]);
+        } else if (pid == 0) {
+            // Child
+            printf("pid: %d\n", getpid());
+            exit(0); // Exit child
+        } else {
+            // Parent
+        }
+    }
+
+    return 0; // exit
+}
+
 
 ### Bash
