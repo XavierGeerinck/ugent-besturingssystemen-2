@@ -20,7 +20,8 @@
 |pipe|maakt pipe aan, pipefd[0] = lees kant, pipefd[1] = schrijf kant|`int pipe(int pipefd[2]);`|
 
 > **IMPORTANT NOTES:**
-> * When using pipes, close the not used end! (close(fd[0]) or close(fd[1]))
+> * Bij pipes, sluit niet gebruikt einde! (close(fd[0]) or close(fd[1]))
+> * Bij pipes, gebruik 2 verschillende fd's als moet kunnen schrijven en lezen.
 
 ## Bash
 
