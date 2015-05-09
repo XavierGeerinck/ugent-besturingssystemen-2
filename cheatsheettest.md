@@ -17,7 +17,7 @@
 |getpid|vraagt pid op van het proces, gebruikt om pid kind te weten.|`pid_t getpid(void)`|
 |execve|voert een programma uit|`int execve(const char*filename, char *const argv[], char *const envp[])`|
 |waitid, waitpid|Wacht op en process om van state te veranderen|`waitid(P_ALL, pid, NULL, WEXITED);`|
-|pipe|maakt pipe aan|`int pipe(int pipefd[2]);`|
+|pipe|maakt pipe aan, pipefd[0] = lees kant, pipefd[1] = schrijf kant|`int pipe(int pipefd[2]);`|
 
 ## Bash
 
