@@ -22,6 +22,8 @@
 > **IMPORTANT NOTES:**
 > * Bij pipes, sluit niet gebruikt einde! (close(fd[0]) or close(fd[1]))
 > * Bij pipes, gebruik 2 verschillende fd's als moet kunnen schrijven en lezen.
+> * read en write kunnen ook naar pipes readen en writen.
+> * Zorg zeker dat we een while != sizeof() gebruiken bij read!
 
 ## Bash
 
