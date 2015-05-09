@@ -19,6 +19,9 @@
 |waitid, waitpid|Wacht op en process om van state te veranderen|`waitid(P_ALL, pid, NULL, WEXITED);`|
 |pipe|maakt pipe aan, pipefd[0] = lees kant, pipefd[1] = schrijf kant|`int pipe(int pipefd[2]);`|
 
+> **IMPORTANT NOTES:**
+> * When using pipes, close the not used end! (close(fd[0]) or close(fd[1]))
+
 ## Bash
 
 ## Voorbeelden
