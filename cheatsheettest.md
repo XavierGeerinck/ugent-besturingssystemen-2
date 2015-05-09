@@ -113,5 +113,41 @@
         return 0; // exit
     }
 
+#### 3. Waitid
+
+    #include <stdlib.h> // exit
+    #include <unistd.h> // fork, execv
+    #include <stdio.h> // perror
+    #include <sys/types.h> // waitid
+    #include <sys/wait.h> // waitid
+    #include <sys/stat.h>
+    
+    int main(int argc, char** argv) {
+        pid_t pid;
+    
+        if ((pid = fork()) < 0) {
+            perror(argv[0]);
+            exit(1);
+        } else if (pid == 0) {
+            // CHILD
+            // call writestring with argument hello
+            char *args[] = {"/takeoff/ugent/c++/writestring_externcall", "HelloWorld", 0};
+    
+            if (execv("writestring", args) < 0) {
+                perror(argv[0]);
+                exit(1);
+            }
+    
+            exit(0);
+        } else {
+            // parent
+            waitid(P_ALL, pid, NULL, WEXITED);
+        }
+    
+        printf("DONE\n");
+    
+        return 0;
+    }
+
 
 ### Bash
