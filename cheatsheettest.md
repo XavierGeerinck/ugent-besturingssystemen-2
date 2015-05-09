@@ -13,8 +13,9 @@
 |clock|vraagt de tijd op|`clock()`|
 |CLOCKS_PER_SEC|clock ticks per seconde global variabele||
 |malloc|assign geheugen, vergeet free niet te doen||
-|fork|maakt een kind proces aan|pid_t fork(void);|
-|getpid|vraagt pid op van het proces, gebruikt om pid kind te weten.|pid_t getpid(void);|
+|fork|maakt een kind proces aan|`pid_t fork(void)`|
+|getpid|vraagt pid op van het proces, gebruikt om pid kind te weten.|`pid_t getpid(void)`|
+|execve|voert een programma uit|`int execve(const char*filename, char *const argv[], char *const envp[])`|
 
 ## Bash
 
