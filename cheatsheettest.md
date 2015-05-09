@@ -90,25 +90,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char** argv) {
-    pid_t pid;
-
-    // Create 3 childs
-    for (int i = 0; i < 3; i++) {
-        if ((pid = fork()) < 0) {
-            // Error
-            perror(argv[0]);
-        } else if (pid == 0) {
-            // Child
-            printf("pid: %d\n", getpid());
-            exit(0); // Exit child
-        } else {
-            // Parent
+    int main(int argc, char** argv) {
+        pid_t pid;
+    
+        // Create 3 childs
+        for (int i = 0; i < 3; i++) {
+            if ((pid = fork()) < 0) {
+                // Error
+                perror(argv[0]);
+            } else if (pid == 0) {
+                // Child
+                printf("pid: %d\n", getpid());
+                exit(0); // Exit child
+            } else {
+                // Parent
+            }
         }
+    
+        return 0; // exit
     }
-
-    return 0; // exit
-}
 
 
 ### Bash
