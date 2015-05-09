@@ -156,5 +156,115 @@
         return 0;
     }
 
+#### 4. Piping
+
+    // 1 argument: Number of child process to generate.
+    // Every child process generates a number and sends it to the parent.
+    // The parent then finds the biggest of the numbers and sends that back to the children
+    // When the children are done writing this number to the screen the parent exits.
+    // ==> 2 pipes, one for reading and one for writing
+    
+    #include <stdlib.h> // srand, rand
+    #include <unistd.h> // pipe, close, write
+    #include <stdio.h> // printf
+    #include <sys/types.h> // waitpid
+    #include <sys/wait.h> // waitpid
+    
+    typedef struct process {
+        int pid;
+        int fd_write;
+    } process;
+    
+    int winner_id = 0;
+    int winner_value = 0;
+    
+    int main(int argc, char ** argv) {
+        if (argc != 2) {
+            printf("Expected 1 parameter.\n");
+            exit(1);
+        }
+    
+        process processes[atoi(argv[1])]; // our process table
+        int received_numbers = 0;
+        int fd1[2];
+        int fd2[2];
+    
+        // Create the processes
+        for (int i = 0; i < atoi(argv[1]); i++) {
+            // Create the pipe for this process
+            if (pipe(fd1) < 0 || pipe(fd2) < 0) {
+                perror(argv[0]);
+                exit(1);
+            }
+    
+            // Create the child process
+            if ((processes[i].pid = fork()) < 0) {
+                perror(argv[0]);
+                exit(1);
+            } else if (processes[i].pid == 0) {
+                // CHILD
+                close(fd1[0]); // Close unused read end
+                close(fd2[1]); // Close unused write end
+    
+                // Generating the random number
+                srand(getpid());
+                int number = rand();
+    
+                // Send this number to the parent
+                if ((write(fd1[1], &number, sizeof(int)) != sizeof(int)) < 0) {
+                    perror(argv[0]);
+                    exit(1);
+                };
+    
+                // Wait for the response
+                int winner_pid;
+                while (read(fd2[0], &winner_pid, sizeof(int)) != sizeof(int));
+    
+                // Determine if the process is the winner or not
+                if (winner_pid == getpid()) {
+                    printf("I'm the winner!\n");
+                } else {
+                    printf("Process %d is the winner\n", winner_pid);
+                }
+    
+                // Exit child
+                exit(0);
+            } else {
+                // PARENT
+                close(fd1[1]); // Close unused write end
+                close(fd2[0]); // Close unused read end
+    
+                processes[i].fd_write = fd2[1];
+    
+                // Wait for the processes to close
+                int number;
+                if (read(fd1[0], &number, sizeof(int)) != sizeof(int)) {
+                    perror(argv[1]);
+                    exit(1);
+                }
+    
+                printf("Number Received: %-10d from process: %d\n", number, processes[i].pid);
+    
+                // Determine winner
+                if (winner_value < number) {
+                    winner_id = i;
+                }
+            }
+        }
+    
+        // Send the winner back
+        for (int i = 0; i < atoi(argv[1]); i++) {
+            if ((write(processes[i].fd_write, &processes[winner_id].pid, sizeof(int)) != sizeof(int)) < 0) {
+                perror(argv[1]);
+                exit(1);
+            }
+        }
+    
+        // Wait for the childs to exit
+        waitpid(-1, NULL, 0);
+    
+        return 0;
+    }
+
 
 ### Bash
