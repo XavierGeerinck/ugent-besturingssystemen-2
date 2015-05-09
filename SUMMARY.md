@@ -12,5 +12,5 @@
 * [Utilities](utilities.md)
 * [Exercises](exercises.md)
 * [ExercisesScripting](exercisesscripting.md)
-* CheatSheetTest
+* [CheatSheetTest](cheatsheettest.md)
 
