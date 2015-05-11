@@ -26,6 +26,7 @@
 > * Bij pipes, gebruik 2 verschillende fd's als moet kunnen schrijven en lezen.
 > * read en write kunnen ook naar pipes readen en writen.
 > * Zorg zeker dat we een while != sizeof() gebruiken bij read!
+> * Bij threads, zorg zeker voor arg struct als meerdere args
 
 ## Bash
 
