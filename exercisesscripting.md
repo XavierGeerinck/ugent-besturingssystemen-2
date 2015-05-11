@@ -400,6 +400,7 @@ gebruiken. Om problemen te vermijden, schrijf je bij het testen de kill-opdracht
 
 ## # 104
 ### Vraag
+Ontwikkel een script dat (zonder gestopt te gebruiken) alle opties die aan het script worden meegegeven naar standaarduitvoer wegschrijft, één per regel. Je moet dus alle karakters die voorkomen in parameters die beginnen met een minteken verzamelen, en deze één voor één verwerken. Bekommer je niet om opties die meerdere keren zouden voorkomen. Voor de argumentenlijst -Ec -rq /etc/passwd -a moet het script dus als uitvoer E, c, r, q en a produceren. Tip: gebruik een lus en stringoperatoren.
 
 ### Oplossing
 ```bash
