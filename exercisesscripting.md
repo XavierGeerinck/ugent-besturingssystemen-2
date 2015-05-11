@@ -460,6 +460,7 @@ done
 
 ## # 107
 ### Vraag
+Ontwikkel een script dat in een directory tree (de eerste parameter) op zoek gaat naar alle bestanden waarvan de naam voldoet aan een bepaald patroon (de tweede parameter) en met behulp van grep in de inhoud van deze bestanden op zoek gaat naar een reguliere expressie (de derde parameter). Van zodra een van de bestanden in een bepaalde directory de expressie bevat, moet de zoektocht in deze directory worden beëindigd. Gebruik een geneste for-lus, waarbij de buitenste for-lus recursief op zoek gaat naar alle directory's, en de binnenste for-lus alle bestanden in een specifieke directory afloopt (niet recursief). In beide lussen wordt de woordenlijst samengesteld op basis van een find-commando met geschikte opties.
 
 ### Oplossing
 ```bash
