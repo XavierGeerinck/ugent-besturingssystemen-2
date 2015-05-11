@@ -269,5 +269,87 @@
         return 0;
     }
 
+#### 5. Threads
+    #include <pthread.h> // pthread_join, pthread_create (compile and link with -pthread)
+    #include <stdlib.h> // rand, srand
+    #include <time.h> // time
+    #include <iostream> // cout, endl
+    #include <stdio.h> // printf
+    
+    #define ELEMENT_COUNT 1000000
+    
+    typedef struct arguments {
+        double* numbers;
+        int number_count;
+    } arguments;
+    
+    void* find_smallest(void *args) {
+        arguments *a = (arguments*) args;
+    
+        double *smallest = (double *)malloc(sizeof(double));
+        *smallest = a->numbers[0];
+    
+        for (int i = 1; i < a->number_count; i++) {
+            if (*smallest > a->numbers[i]) {
+                *smallest = a->numbers[i];
+            }
+        }
+    
+        return smallest;
+    }
+    
+    void* find_biggest(void *args) {
+        arguments *a = (arguments*) args;
+    
+        double *biggest = (double *)malloc(sizeof(double));
+        *biggest = a->numbers[0];
+    
+        for (int i = 1; i < a->number_count; i++) {
+            if (*biggest < a->numbers[i]) {
+                *biggest = a->numbers[i];
+            }
+        }
+    
+        return biggest;
+    }
+    
+    int main(int argc, char** argv) {
+        srand(time(0));
+    
+        arguments args;
+    
+        args.numbers = (double *)malloc(sizeof(double) * ELEMENT_COUNT);
+        args.number_count = ELEMENT_COUNT;
+    
+        for (int i = 0; i < ELEMENT_COUNT; i++) {
+            *(args.numbers + i) = rand();
+        }
+    
+        // create threads for finding the biggest and the smallest number
+        void *thread1_result;
+        void *thread2_result;
+    
+        pthread_t threads[2];
+    
+        pthread_create(&threads[0], NULL, &find_smallest, &args);
+        pthread_create(&threads[1], NULL, &find_biggest, &args);
+    
+        pthread_join(threads[0], &thread1_result);
+        pthread_join(threads[1], &thread2_result);
+    
+        double smallest = *(double *)thread1_result;
+        double biggest = *(double *)thread2_result;
+    
+        printf("Biggest: %f\n", biggest);
+        printf("Smallest: %f\n", smallest);
+        std::cout << "Done" << std::endl;
+    
+        free(thread1_result);
+        free(thread2_result);
+        free(args.numbers);
+    
+        return 0;
+    }
+
 
 ### Bash
