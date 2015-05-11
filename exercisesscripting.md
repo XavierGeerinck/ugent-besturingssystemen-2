@@ -343,6 +343,7 @@ Tip: gebruik / als scheidingsteken.
 
 ### Oplossing
 ```bash
+#!/bin/bash
 # Simulate mkdir -p
 ABSOLUTE_PATH=0
 
@@ -404,6 +405,7 @@ Ontwikkel een script dat (zonder gestopt te gebruiken) alle opties die aan het s
 
 ### Oplossing
 ```bash
+#!/bin/bash
 regex="-([a-zA-Z]+)"
 
 IFS=' ' read -ra input <<< $1
@@ -428,6 +430,7 @@ Ontwikkel een script dat als eerste parameter een bestandsnaam heeft, en als twe
 
 ### Oplossing
 ```bash
+#!/bin/bash
 regex="<$2>(.*)</$2>"
 
 while IFS="\n" read -r line; do
