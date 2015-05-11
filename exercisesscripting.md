@@ -529,6 +529,11 @@ done < 'stud.txt'
 
 ## # 111
 ### Vraag
+Ontwikkel een script dat een recursieve versie van het UNIX commando wc simuleert. Behalve de interne instructies (if, for, case, let, while, read enz.) mag je ook de externe commando's echo, wc en find gebruiken. Het script kan opgeroepen worden met 0 tot 3 opties (-l, -w en -c, niet noodzakelijk in die volgorde), gevolgd door een willekeurig aantal parameters. Indien er geen enkele optie meegegeven wordt, wordt aangenomen dat alledrie de opties werden vermeld. De parameters kunnen zowel bestandsnamen als namen van directory's zijn; worden geen parameters meegegeven, dan neemt het script de werkdirectory in beschouwing. De optie -l staat voor het afdrukken van het aantal regels, -w voor het aantal woorden en -c voor het aantal karakters. Deze aantallen worden berekend 
+* voor elk bestand dat als parameter meegegeven wordt,
+* voor elk bestand in de tree van een directory die als parameter meegegeven
+wordt en
+* tot slot voor alle bestanden samen. 
 
 ### Oplossing
 ```bash
