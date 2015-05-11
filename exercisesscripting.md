@@ -428,6 +428,15 @@ Ontwikkel een script dat als eerste parameter een bestandsnaam heeft, en als twe
 
 ### Oplossing
 ```bash
+regex="<$2>(.*)</$2>"
+
+while IFS="\n" read -r line; do
+    [[ $line =~ $regex ]]
+
+    if [[ "${BASH_REMATCH[1]}" != '' ]]; then
+        echo "${BASH_REMATCH[1]}"
+    fi
+done < $1
 
 ```
 
