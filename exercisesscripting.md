@@ -456,7 +456,6 @@ done < /etc/passwd
 for gid in ${!tot[@]} ; do				#alle indices overlopen van de array
     echo "Groep $gid bevat ${tot[gid]} gebruikers"
 done
-
 ```
 
 ## # 107
