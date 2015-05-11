@@ -625,6 +625,65 @@ minder dan 80 MB vrij hebben op de C: schijf, één per regel.
 
 ### pagefile.out
 
+    C:\WINNT\system32>dir \\AL005951\c$\pagefile.sys 
+     Volume in drive \\AL005951\c$ is WINNT
+     Volume Serial Number is D0A0-4386
+    
+     Directory of \\AL005951\c$
+    
+    02/08/00  02:12            146.800.640 pagefile.sys
+                   1 File(s)    146.800.640 bytes
+                                577.850.880 bytes free
+    
+    C:\WINNT\system32>dir \\AL005952\c$\pagefile.sys 
+     Volume in drive \\AL005952\c$ is WINNT
+     Volume Serial Number is E811-F225
+    
+     Directory of \\AL005952\c$
+    
+    02/04/00  10:16            146.800.640 pagefile.sys
+                   1 File(s)    146.800.640 bytes
+                                195.746.816 bytes free
+    
+    C:\WINNT\system32>dir \\AL006152\c$\pagefile.sys 
+     Volume in drive \\AL006152\c$ is WINNT
+     Volume Serial Number is C8AE-ECE0
+    
+     Directory of \\AL006152\c$
+    
+    01/28/00  14:46            146.800.640 pagefile.sys
+                   1 File(s)    146.800.640 bytes
+                                450.138.112 bytes free
+    
+    C:\WINNT\system32>dir \\AL015751\c$\pagefile.sys 
+     Volume in drive \\AL015751\c$ is WINNT
+     Volume Serial Number is 6C9F-AF0D
+    
+     Directory of \\AL015751\c$
+    
+    02/07/00  22:09            146.800.640 pagefile.sys
+                   1 File(s)    146.800.640 bytes
+                                352.622.080 bytes free
+    
+    C:\WINNT\system32>dir \\AL016151\c$\pagefile.sys 
+     Volume in drive \\AL016151\c$ is WINNT
+     Volume Serial Number is B413-29CF
+    
+     Directory of \\AL016151\c$
+    
+    01/18/00  08:43            146.800.640 pagefile.sys
+                   1 File(s)    146.800.640 bytes
+                                338.255.872 bytes free
+    
+    C:\WINNT\system32>dir \\AL024251\c$\pagefile.sys 
+     Volume in drive \\AL024251\c$ is WINNT
+     Volume Serial Number is F4FF-E41E
+    
+     Directory of \\AL024251\c$
+    
+    01/18/00  08:43            146.800.640 pagefile.sys
+                   1 File(s)    146.800.640 bytes
+                                590.295.040 bytes free
 ### Oplossing
 ```bash
 regex_free='([0-9\.]+) bytes free'
