@@ -404,6 +404,22 @@ Ontwikkel een script dat (zonder gestopt te gebruiken) alle opties die aan het s
 
 ### Oplossing
 ```bash
+regex="-([a-zA-Z]+)"
+
+IFS=' ' read -ra input <<< $1
+for i in ${input[@]}
+do
+    # Regex
+    [[ $i =~ $regex ]]
+
+    params="${BASH_REMATCH[1]}"
+
+    if [[ $params != "" ]]; then
+        for ((i = 0; i <${#params}; i++)); do
+            printf "%s " ${params:$i:1}
+        done
+    fi
+done
 
 ```
 
