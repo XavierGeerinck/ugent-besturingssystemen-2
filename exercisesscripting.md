@@ -444,6 +444,16 @@ done < $1
 
 ### Oplossing
 ```bash
+#!/usr/bin/bash
+IFS=":"
+tel=0
+while read account passwd uid gid rest ; do		#regels van /etc/passwd inlezen
+    (( tot[gid]++ ))					#frequentietabel opstellen per gid
+done < /etc/passwd
+
+for gid in ${!tot[@]} ; do				#alle indices overlopen van de array
+    echo "Groep $gid bevat ${tot[gid]} gebruikers"
+done
 
 ```
 
