@@ -622,6 +622,9 @@ Directory of \\AL005951\c$
 De regel met de woorden bytes free vermeldt de beschikbare ruimte op het volume C:.
 Maak een script dat een tekstbestand genereert met de namen van alle toestellen die
 minder dan 80 MB vrij hebben op de C: schijf, één per regel. 
+
+### pagefile.out
+
 ### Oplossing
 ```bash
 
