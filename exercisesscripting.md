@@ -627,6 +627,34 @@ minder dan 80 MB vrij hebben op de C: schijf, één per regel.
 
 ### Oplossing
 ```bash
+regex_free='([0-9\.]+) bytes free'
+regex_name='\\\\(.*)\\c\$\\pagefile\.sys'
+size=$((80 * 1024 * 1024))
+name=""
+bytes_free=""
+
+while IFS="\n" read -r line; do
+    # Get bytes Free
+    [[ $line =~ $regex_free ]]
+
+    if [[ ${BASH_REMATCH[1]} != '' ]]; then
+        bytes_free=${BASH_REMATCH[1]}
+    fi
+
+    # Get Name
+    [[ $line =~ $regex_name ]]
+
+    if [[ ${BASH_REMATCH[1]} != '' ]]; then
+        name=${BASH_REMATCH[1]}
+    fi
+
+    # IF both set, determine if less than 80Mb
+    if [[ $name != "" && $bytes_free != "" && ${bytes_free//./} -lt $size ]]; then
+        echo "$name"
+        name=""
+        bytes_free=""
+    fi
+done < 'pagefile.out'
 
 ```
 
