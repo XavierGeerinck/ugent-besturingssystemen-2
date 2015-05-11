@@ -437,7 +437,6 @@ while IFS="\n" read -r line; do
         echo "${BASH_REMATCH[1]}"
     fi
 done < $1
-
 ```
 
 ## # 106
