@@ -444,7 +444,6 @@ done < $1
 
 ### Oplossing
 ```bash
-#!/usr/bin/bash
 IFS=":"
 tel=0
 while read account passwd uid gid rest ; do		#regels van /etc/passwd inlezen
