@@ -540,6 +540,14 @@ wordt en
 
 ```
 
+## # 112
+### Vraag
+
+### Oplossing
+```bash
+
+```
+
 TIPS
 1.
 echo ${tab[@]} | xargs -n1
