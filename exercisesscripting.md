@@ -606,7 +606,19 @@ rm -f $TMP
 
 ## # 112
 ### Vraag
-
+Het bestand pagefile.out bevat de uitvoer van een Windows batch file:
+dir \\AL005951\c$\pagefile.sys
+dir \\AL005952\c$\pagefile.sys
+…
+Elk van de 2.901 dir-opdrachten werd beantwoord met regels van de vorm:
+C:\WINNT\system32>dir \\AL005951\c$\pagefile.sys
+Volume in drive \\AL005951\c$ is WINNT
+Volume Serial Number is D0A0-4386
+Directory of \\AL005951\c$
+02/08/00 02:12 146.800.640 pagefile.sys
+ 1 File(s) 146.800.640 bytes
+ 577.850.880 bytes free
+ 
 ### Oplossing
 ```bash
 
