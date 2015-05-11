@@ -336,14 +336,62 @@ done
 
 ## # 102
 ### Vraag
+Ontwikkel een script dat een directory maakt waarvan het pad als (enige) parameter
+aan het script meegegeven wordt. Indien tussenliggende directory's ook nog niet zouden bestaan, moeten deze eveneens gecreëerd worden. Het script simuleert bijgevolg mkdir -p. Het mag enkel interne Bash-instructies (if, for, case, let, while, read enz.) gebruiken, en bovendien het commando mkdir, zij het zonder de optie -p. Zorg ervoor dat zowel absolute als relatieve (t.o.v. de huidige directory) padnamen worden ondersteund. 
+
+Tip: gebruik / als scheidingsteken. 
 
 ### Oplossing
 ```bash
+# Simulate mkdir -p
+ABSOLUTE_PATH=0
 
+if [[ ${1:0:1} == "/" ]];
+    then
+    ABSOLUTE_PATH=1
+fi
+
+echo "Path: ${ABSOLUTE_PATH}"
+
+# If absolute, cd to /
+if [[ $ABSOLUTE_PATH == 1 ]];
+    then
+    cd /
+fi
+
+# Start processing the path creation
+IFS='/' read -ra dir <<< $1
+for i in "${dir[@]}"; do
+    # If empty, skip
+    if [[ $i == "" ]];
+        then
+        continue
+    fi
+
+    # Determine if dir exists, if not create it
+    if [[ ! -d $i ]];
+        then
+        mkdir "$i"
+    fi
+
+    # Descend into the new dir
+    cd "$i"
+done
 ```
 
 ## # 103
 ### Vraag
+Enerzijds kun je met behulp van het commando ps -e informatie opvragen over alle
+processen die actief zijn. De vier kolommen in de output tonen respectievelijk het
+proces-ID (PID), de TTY device file van de (pseudo-)terminal, de CPU time, en het
+commando dat het proces opgestart heeft. Anderzijds kun je met behulp van het
+commando kill -KILL pid een proces met willekeurig proces-ID afbreken. Ontwikkel een
+script dat alle processen afbreekt waarvan het commando één van de strings bevat die
+als parameters bij het oproepen van het script meegegeven wordt. Indien geen enkele
+parameter meegegeven wordt, moet het script een gesorteerde lijst weergeven van alle
+unieke commandonamen van actieve processen. Behalve de interne instructies (if, for,
+case, let, while, read enz.) mag je ook de externe commando's grep, sort en uniq
+gebruiken. Om problemen te vermijden, schrijf je bij het testen de kill-opdracht uit naar standaarduitvoer i.p.v. deze daadwerkelijk uit te voeren.
 
 ### Oplossing
 ```bash
