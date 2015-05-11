@@ -477,10 +477,38 @@ done
 
 ## # 108
 ### Vraag
+Een vaak voorkomend probleem is een groot aantal gebruikersaccounts aanmaken, waarbij alle informatie over deze gebruikers in een bestand te vinden is. Een eerste stap bestaat erin om voor elke gebruiker een unieke gebruikersnaam te genereren, op basis van voor de gebruiker specifieke informatie. Het bestand stud.txt bevat per student zijn/haar studentennummer (bestaande uit acht cijfers), volledige naam (bv. Piet Van Hee), postnummer, type student (A, B …), woonplaats, geboortedatum en klascode. Genereer voor elke student uit dit bestand een gebruikersnaam, rekening houdend met volgende regels:
+* Neem de eerste letter van de voornaam, veronderstellend dat die steeds uit
+één woord bestaat.
+* Neem de eerste significante letter van de familienaam toe. Negeer de
+prefixen van, de, den, der.
+* Neem ten slotte de laatste 6 cijfers van het studentennummer
+Je moet bijgevolg onder meer volgende gebruikersnamen bekomen: TB952571,
+SW952641 en BC952578.
+
+### std.txt
 
 ### Oplossing
 ```bash
+naam_regex='([a-zA-Z\-]+)\s?([a-zA-Z\-]+)?\s?([a-zA-Z\-]+)?\s?([a-zA-Z\-]+)?\s?([a-zA-Z\-]+)?\s?([a-zA-Z\-]+)?'
+while IFS="\n" read -r line; do
+    while IFS=":" read -r studentnummer naam postnummer geboortedatum typestudent; do
+        # Eerste letter naam
+        result=${naam:0:1}
 
+        # Significante letter familienaam
+        [[ $naam  =~ $naam_regex ]]
+
+        matches=`echo $naam | grep -o -E '([a-zA-Z\-]+)?' | wc -l`
+        result="$result${BASH_REMATCH[matches]:0:1}"
+
+        # laatste 6 cijfers studentennummer
+        studentnummer_lengte=`echo $studentnummer | wc -c`
+        result="$result${studentnummer:studentnummer_lengte - 7:studentnummer_lengte}"
+
+        printf "%10s %s\n" "$result" "$naam"
+    done <<< $line
+done < 'stud.txt'
 ```
 
 ## # 109
