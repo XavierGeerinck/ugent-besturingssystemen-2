@@ -353,3 +353,6 @@
 
 
 ### Bash
+|Commando|Betekenis|vb|
+|-|-|-|
+|xargs|neemt argumenten|`echo ${tab[@]} \| xargs -n1`|
