@@ -18,6 +18,8 @@
 |execve|voert een programma uit|`int execve(const char*filename, char *const argv[], char *const envp[])`|
 |waitid, waitpid|Wacht op en process om van state te veranderen|`waitid(P_ALL, pid, NULL, WEXITED);`|
 |pipe|maakt pipe aan, pipefd[0] = lees kant, pipefd[1] = schrijf kant|`int pipe(int pipefd[2]);`|
+|pthread_create|Maakt nieuwe thread aan|`int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine) void( *), void *arg);`|
+|pthread_join|Deze functie wacht voor een gegeven thread tot deze klaar is.|`int pthread_join(pthread_t thread, void **retval);`|
 
 > **IMPORTANT NOTES:**
 > * Bij pipes, sluit niet gebruikt einde! (close(fd[0]) or close(fd[1]))
