@@ -44,7 +44,7 @@
     * Verwijderen gebeurt door `cron -r`
 
 ## Verklaar speciale toegangsrechten
-* Sticky bit
+* **Sticky bit**
     * **Vroeger:** save text mode, indien gezet houd bestand in geheugen (bv: vi)
     * **Nu:** 
         * Geplaatst op directory
@@ -53,12 +53,12 @@
         * Aanzetten: `chmod u+t /tmp`
         * Zien: `ls -ld /tmp` ==> `drwxrwxrwt 2 root root 8704 ...`
         * In recente linux distributies: `chmod o+t /tmp` of `chmod 1777 /tmp`
-* set-user-id (SUID) / set-group-id (SGID) op file
+* **set-user-id (SUID) / set-group-id (SGID) op file**
     *  Bij opstarten process, krijgt dit effective user id / group id het id van de gebruikerseigenaar.
     *  Dit laat gewone gebruikers commando's uitvoeren waar ze normaal geen rechten op hebben (vb: `passwd`)
     *  Gebruik: `chmod u+s binbestand` of `chmod g+s binbestand`
     *  Gebruik: `chmod 4xxx binbestand`
     *  Gaat enkel voor binaire bestanden, niet voor scripts (kan via compile bestand en exec)
-* set-group-id (SGID) op directory
+* **set-group-id (SGID) op directory**
     * Bestanden gemaakt in directory met dit bit, krijgen groepseigenaar van de directory 
     * Interessant voor bijvoorbeeld www (`chmod g+s dir`)
