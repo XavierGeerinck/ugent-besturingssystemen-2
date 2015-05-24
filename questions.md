@@ -62,3 +62,38 @@
 * **set-group-id (SGID) op directory**
     * Bestanden gemaakt in directory met dit bit, krijgen groepseigenaar van de directory 
     * Interessant voor bijvoorbeeld www (`chmod g+s dir`)
+
+## Verklaar variabelen in de shell
+* Gewone variabelen
+    * Stelt geheugenplaats die naam heeft gekregen voor.
+    * Naam begint met een letter of underscore en bevat letters, cijfers of underscores.
+    * Shell variabelen zijn altijd tekenstrings, dit omdat deze geen variabeltypes kent.
+    * Waarde wordt gezet door toekenning (=)
+    * Variabele wordt omgezet in waarde door prefix $ (expanderen d.m.v. parameter of woordexpansie)
+    * $1,$2,... zijn argumenten op commando regel
+    * Environment variabelen (enkel hoofdletters):
+        *  Elke variabele gekopieerd naar kind shell.
+        *  Gebruik het commando `set` om deze te zien 
+        *  Voorbeelden: `PATH`, `HOME`
+        *  Zetten door: `PATH=/bin:/usr/bin:/urs/local/bin`
+    *  Verwijderen variabele door: `unset varname`
+    *  Opsplitsen van parameters door IFS, standaard spatie, tab, new line. Zet deze door: `IFS=:`
+* Arrays
+    * `table[32]="value"`
+    * `declare -a tablename` → Dit maakt tabel aan zonder elementen
+    * `declare -A tablename` → Maakt associatieve array aan
+    * `table=(val1 val2 val3)` → Zet tabel elementen
+    * `table=(val1 [2]=val2 val3)` → Zet index 2 op waarde
+    * `echo ${table[32]}` → Toont waarde op plaats 32
+    * `echo ${#table[*]}` → Toont aantal elementen
+    * `echo ${table[@]}` of `echo ${table[*]}` → toont alle elementen
+    * `unset tablename[idx]` of `unset tablename` → verwijdert tabel index of tabel
+* Speciale notering: foutboodschap
+* Default waarden
+* Anti Default waarden
+* Bereik van variabelen
+* Speciale variabelen
+
+### Bij toekenning aan variabele, waarom geen spatie voor en na het = teken?
+### Waarom kan variabele alleen van ouder --> kind en niet andersom? 
+--> Zie processen
