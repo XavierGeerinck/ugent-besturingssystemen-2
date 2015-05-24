@@ -117,3 +117,5 @@
 * Als kind process aangemaakt, enkel env vars gekopieerd
 * Dit is een subshell, en heeft dus een volledige andere omgeving
 * Ouder kan variabelen kopieren door `export var` te doen, kind kan dit niet naar ouder.
+
+## Wat zijn wildcards en hoe worden ze door de shell verwerkt?
