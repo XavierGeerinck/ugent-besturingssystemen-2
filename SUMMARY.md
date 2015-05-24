@@ -13,5 +13,4 @@
 * [Exercises](exercises.md)
 * [ExercisesScripting](exercisesscripting.md)
 * [CheatSheetTest](cheatsheettest.md)
-* 8. Vragen
 
