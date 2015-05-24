@@ -89,11 +89,31 @@
     * `echo ${table[@]}` of `echo ${table[*]}` → toont alle elementen
     * `unset tablename[idx]` of `unset tablename` → verwijdert tabel index of tabel
 * Speciale notering: foutboodschap
+    * `echo ${var?}` → Als var gezet print, anders error
+    * `echo ${var?error happened\?}` → Toont error happened als niet gezet
 * Default waarden
+    * `echo ${var='default value'}` → Wijst default waarde toe 
 * Anti Default waarden
+    * `echo ${var+'some val'}` → Wijst some val toe als niks meegegeven 
 * Bereik van variabelen
+    * `sh` opent nieuwe shell
+    * Environment variabelen worden daarnaar gekopieerd, andere variabelen niet
+    * Enkel indien ze geexporteerd zijn door: `export varname`
+    * Kind shell kan geen waarde teruggeven aan oudershell (schrijven in file)
 * Speciale variabelen
+    * `$#` → aantal / lengte
+    * `$*`, $@` → Alle argumenten van het shellscript
+    * `$0` → Naam script
+    * `$?` → Exit status
+    * `$$` → Process ID
+    * `$!` → Process identification laatste met & opgestart commando
 
 ### Bij toekenning aan variabele, waarom geen spatie voor en na het = teken?
+* Bash ziet assignatie anders als een commando met parameters achter
+* Gaat zoeken achter commando en gaat dit mss niet vinden → error
+* Wel vinden zal toeval zijn, en gaat rare uitkomst geven
+
 ### Waarom kan variabele alleen van ouder --> kind en niet andersom? 
---> Zie processen
+* Als kind process aangemaakt, enkel env vars gekopieerd
+* Dit is een subshell, en heeft dus een volledige andere omgeving
+* Ouder kan variabelen kopieren door `export var` te doen, kind kan dit niet naar ouder.
