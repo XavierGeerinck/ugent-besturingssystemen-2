@@ -10,6 +10,8 @@
     * Ken paging areas toe (swap)
     * Clean filesystem (/tmp, /usr/tmp)
     * Start server daemons
+    * Start netwerk daemons
+    * Start X-Windows
 ## Verschillen bootstrapping bij Windows
 * Deze gebruikt het MBR, wat het master boot programma bevat
 * Deze laat het programma op het bootblok.
