@@ -1,4 +1,14 @@
 # 8. Questions
+## Bootstrapping (computer systeem opstarten en klaarmaken voor gebruik)
+## Commando's opzoeken en uitvoeren
+1. Als pad, kijk of bestand bestaat en uitvoerbaar is. Als dit het geval is, voer commando uit. Anders toon een foutmelding.
+2. Als geen pad, kijk of het een intern commando is.
+    * Als alias, voer alias uit
+    * Als functie, voer functie uit
+    * Als geen alias of functie, zoek op in interne tabel van shell commando's (als bestaat voer uit).
+3. Als geen intern commando, overloop $PATH directories.
+4. Anders toon "command not found"
+
 ## Voeg gebruiker toe zonder adduser / addgroup
 1. Voeg lijn toe in /etc/passwd
     * **login:** Gebruiker zijn login naam
