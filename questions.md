@@ -29,7 +29,15 @@
 |6|shutdown en reboot, gebruikt om naar level 0 te gaan en systeem opnieuw op te starten|
 
 ## Afsluiten systeem
-*
+* Verwittig gebruikers
+* Alle processen krijgen TERM signaal
+* subsystemen stilleggen via ingebouwde commando's
+* resterende gebruikers uitloggen en resterende processen afsluien
+* geheugen wegschrijven naar disks
+* Afhankelijk van soort shutdown:
+    * Naar single user mode
+    * Volledige shutdown (cpu down)
+    * Reboot
 
 ## Verschillen bootstrapping bij Windows
 * Deze gebruikt het MBR, wat het master boot programma bevat
