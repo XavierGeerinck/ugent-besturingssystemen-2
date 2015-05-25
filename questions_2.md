@@ -43,4 +43,4 @@
 ## Wat is de bedoeling van de init.d en rcX.d mappen en bestanden?
 * Bij verandering runlevel gaat /etc/rc.d/rc worden uitgevoerd met het runlevel nummer
 * de bestanden in de rcX.d map uitgevoerd worden met X de nummer van het runlevel
-* In init.d staan dus de init bestanden (opstart systeem roept /etc/rc.d/rc.sysinit) op.
+* In init.d staan dus de init bestanden (opstart systeem roept /etc/rc.d/rc.sysinit op)
