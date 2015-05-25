@@ -13,6 +13,8 @@
     * Start netwerk daemons
     * Start X-Windows
     * Laat gebruikers zich aanmelden
+6. Nu zit men in multiuser mode.
+7. Meldingen worden gemonitored door syslogd of dmesg en bewaard in een file (/usr/adm/messages, /var/adm/messages, /var/log/messages).
 
 ## Verschillen bootstrapping bij Windows
 * Deze gebruikt het MBR, wat het master boot programma bevat
