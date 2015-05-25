@@ -5,7 +5,7 @@
 3. Dit programma laadt de kernel in het geheugen
 4. Deze initialiseert interne tabellen, detecteert de hardware, laadt de nodige drivers en start spontane processen zoals het init process.
 
-## Verschile bootstrapping bij Windows
+## Verschillen bootstrapping bij Windows
 * Deze gebruikt het MBR, wat het master boot programma bevat
 * Deze laat het programma op het bootblok.
 * Dit 2de bootprogramma gaat acties uitvoeren om kernel te starten.
