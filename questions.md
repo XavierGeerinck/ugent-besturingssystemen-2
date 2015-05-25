@@ -26,6 +26,8 @@
 |3|multi user mode met volledige netwerk|
 |4|door de admin te definieren|
 |5|firmware state, speciaal onderhoud voor systeemdiagnose|
+|6|shutdown en reboot, gebruikt om naar level 0 te gaan en systeem opnieuw op te starten|
+
 ## Verschillen bootstrapping bij Windows
 * Deze gebruikt het MBR, wat het master boot programma bevat
 * Deze laat het programma op het bootblok.
