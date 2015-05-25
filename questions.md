@@ -357,11 +357,6 @@ doet een pop op de argumenten, verwijder 1e argumenten en schuif de rest 1 plaat
 ## leg uit: commandolijn, variabelen, metatekens, omleiden, groeperen, ...
 ### commandolijn
 * Woorden gescheiden door |, |, &, (, ), spatie, tab met carriage return erna.
-* 1e woord geinterpreteerd als commando
-    * Opgezocht in tabel itnerne commando's
-    * Als niet gevonden, overloop alle dirs in $PATH
-        * Als gevonden, voer uit
-        * anders toon "Command not found"
 * Interne of externe commando's:
     * Interne: Deel van shellprocess
     * Externe: Naam van binair uitvoerbaar programma of shell script
