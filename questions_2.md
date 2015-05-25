@@ -11,3 +11,4 @@
 * Is een nieuw bestand met een nieuwe inode en een nieuw datablok. 
 * Aanmaken door: `ln -s brief slink`
 * Krijgt **l** voor de rechten: `lrwxrwxrwx 1 ghv users 5 Nov 17 17:56 slink -> brief`
+* Als doelbestand verwijderd, dan foutboodschap
