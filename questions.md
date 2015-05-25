@@ -13,6 +13,7 @@
     * Start netwerk daemons
     * Start X-Windows
     * Laat gebruikers zich aanmelden
+
 ## Verschillen bootstrapping bij Windows
 * Deze gebruikt het MBR, wat het master boot programma bevat
 * Deze laat het programma op het bootblok.
