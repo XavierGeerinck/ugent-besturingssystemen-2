@@ -19,6 +19,17 @@
     * blokken met inodes
     * blokken met data
 
+## Wat is een superblok?
+* Eerste blok op elk filesysteem
+* Beschrijft status van filesysteem en bevat:
+    * omvang
+    * naam filesysteem
+    * naam volume
+    * aantal files die het kan bevatten
+    * tijdsaanduidingen over laatste update en backup
+    * lijst met vrije datablokken
+    * lijst met vrije inodes
+
 ## Welke info bevat een inode?
 * Identificatie van eigenaar
 * Type object (regular file, dir, special file, softlink, socket, pipe, ...)
