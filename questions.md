@@ -94,7 +94,7 @@
 * Default waarden
     * `echo ${var='default value'}` → Wijst default waarde toe 
 * Anti Default waarden
-    * `echo ${var+'some val'}` → Wijst some val toe als niks meegegeven 
+    * `echo ${var+'some val'}` → Dit voegt some val toe als var gezet
 * Bereik van variabelen
     * `sh` opent nieuwe shell
     * Environment variabelen worden daarnaar gekopieerd, andere variabelen niet
