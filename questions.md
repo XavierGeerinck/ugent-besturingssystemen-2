@@ -16,6 +16,10 @@
 6. Nu zit men in multiuser mode.
 7. Meldingen worden gemonitored door syslogd of dmesg en bewaard in een file (/usr/adm/messages, /var/adm/messages, /var/log/messages).
 
+## Verschillende runlevels
+|runlevel|naam en betekenis|
+|:-:|-|
+|0|powerdown, veilig om spanning af te leggen|
 ## Verschillen bootstrapping bij Windows
 * Deze gebruikt het MBR, wat het master boot programma bevat
 * Deze laat het programma op het bootblok.
