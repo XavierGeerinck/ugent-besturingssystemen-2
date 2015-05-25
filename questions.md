@@ -346,13 +346,43 @@ doet een pop op de argumenten, verwijder 1e argumenten en schuif de rest 1 plaat
 
 ## leg uit: commandolijn, variabelen, metatekens, omleiden, groeperen, ...
 ### commandolijn
+* Woorden gescheiden door |, |, &, (, ), spatie, tab met carriage return erna.
+* 1e woord geinterpreteerd als commando
+    * Opgezocht in tabel itnerne commando's
+    * Als niet gevonden, overloop alle dirs in $PATH
+        * Als gevonden, voer uit
+        * anders toon "Command not found"
+* Interne of externe commando's:
+    * Interne: Deel van shellprocess
+    * Externe: Naam van binair uitvoerbaar programma of shell script
+* Command completion door TAB te gebruiken
+* Command History:
+    * Bijgehouden per gebruiker
+    * .bash_history
+    * Pijltjes omhoog / omlaag
+* Gereserveerde woorden
+    * Speciale betekenis voor de shell
+    * !, case, do, done, elif, else, esac, fi, for, function, if, in, select, then, until, while, {, }, time, [[, ]]
 
 ### opties en argumenten
+* Geeft informatie aan een commando
+* Verander iets aan de werking van het commando
+    * POSIX: Meestal beginnend met '-' en is  een letter
+    * NEW POSIX: Meestal beginnend met '--' gevolgd door woord.
 
 ### metatekens
+* Speciale betekenis in de shell
+* Voorbeelden: >, >>, >, |, >>string, *, ?, [kkk], ;, &, (...), $1 $2 $3, $var, ${var}, \, "tekst", var=waarde, &&, ||, { comm; }, ((uitdr)), [[ uitdr ]], [ uitdr ]
 
 ### pipen
+* date | wc
+* Gaat uitvoer 1e commando met '|' doorpipen naar invoer 2e commando.
+* Kan meerdere keren na elkaar.
 
 ### redirecten
+* Gaat de uitvoer naar een bestand sturen
+* Vb: `date >> datefile.txt`
 
 ### commando's groeperen
+* Gebeurt door (..)
+* Vb: `(date; who) | wc`
