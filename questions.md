@@ -20,6 +20,12 @@
 |runlevel|naam en betekenis|
 |:-:|-|
 |0|powerdown, veilig om spanning af te leggen|
+|1|systeemadmin mode|
+|S of s|single user mode|
+|2|multi user mode zonder netwerk|
+|3|multi user mode met volledige netwerk|
+|4|door de admin te definieren|
+|5|firmware state, speciaal onderhoud voor systeemdiagnose|
 ## Verschillen bootstrapping bij Windows
 * Deze gebruikt het MBR, wat het master boot programma bevat
 * Deze laat het programma op het bootblok.
