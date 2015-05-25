@@ -5,7 +5,7 @@
 3. Dit programma laadt de kernel in het geheugen
 4. Deze initialiseert interne tabellen, detecteert de hardware, laadt de nodige drivers en start spontane processen zoals het init process.
 5.  Dit initprocess laadt initialisatiescripts in /etc  dir (zie `/etc/inittab`).
-    * 
+    * Testen integriteit filesystem met `fsck`
 ## Verschillen bootstrapping bij Windows
 * Deze gebruikt het MBR, wat het master boot programma bevat
 * Deze laat het programma op het bootblok.
