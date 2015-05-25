@@ -1,5 +1,9 @@
 # 8. Questions
 ## Bootstrapping (computer systeem opstarten en klaarmaken voor gebruik)
+1. Bootproces gaat instructies laden op ROM, die starten meestal firmware op (BIOS)
+2. Deze BIOS herkent de hardware en gaat bootpgoramma lokaliseren en starten
+3. Dit programma laadt de kernel in het geheugen
+4. Deze initialiseert interne tabellen, detecteert de hardware, laadt de nodige drivers en start spontane processen zoals het init process.
 ## Commando's opzoeken en uitvoeren
 1. Als pad, kijk of bestand bestaat en uitvoerbaar is. Als dit het geval is, voer commando uit. Anders toon een foutmelding.
 2. Als geen pad, kijk of het een intern commando is.
