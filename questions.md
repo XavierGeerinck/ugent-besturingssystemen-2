@@ -8,6 +8,8 @@
     * Testen integriteit filesystem met `fsck`
     * Mount lokale partities
     * Ken paging areas toe (swap)
+    * Clean filesystem (/tmp, /usr/tmp)
+    * Start server daemons
 ## Verschillen bootstrapping bij Windows
 * Deze gebruikt het MBR, wat het master boot programma bevat
 * Deze laat het programma op het bootblok.
