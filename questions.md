@@ -39,6 +39,7 @@
     * Volledige shutdown (cpu down)
     * Reboot
 *  Kan met commando `/sbin/shutdown`
+
 ## Verschillen bootstrapping bij Windows
 * Deze gebruikt het MBR, wat het master boot programma bevat
 * Deze laat het programma op het bootblok.
