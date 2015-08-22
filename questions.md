@@ -28,6 +28,8 @@
 |5|firmware state, speciaal onderhoud voor systeemdiagnose|
 |6|shutdown en reboot, gebruikt om naar level 0 te gaan en systeem opnieuw op te starten|
 
+Deze runlevels gaan ook telkens hun desbetreffende daemons en bestanden inladen door middel van de /etc/inittab en de files die zich bevinden in de /etc/rc.d/rc<runlevel> folder.
+
 ## Afsluiten systeem
 * Verwittig gebruikers
 * Alle processen krijgen TERM signaal
