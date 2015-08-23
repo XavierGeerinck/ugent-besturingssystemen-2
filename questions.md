@@ -10,6 +10,16 @@ Allereerst is het mogelijk om een backup te maken aan de hand van verschillende 
 Daarnaast kunnen we ook backups nemen door gewoon een kopie te maken van bepaalde folders of zelfs het volledige systeem. Dit doen we met hulpprogrammma's:
 
 * **Tar:** Dit is een van de bekendste archief programma's, het kan archieven maken, verwijderen en openen. Elk bestand of folder behoudt ijn originele structuur en tar gaat ook de permissies, eigenaars en timestamps bijhouden.
+* **cpio:** Deze tool wordt gebruikt voor het kopieren van afzonderlijke bestanden.
+* **dd:** Is een geavanceerde tool om files te kopieren, dit kan ook voledige kopieen maken van schijven of zelfs een kloon van een schijf installeren door middel van netcat en dd.
+
+```
+# Draai op host waar we data van gaan ophalen (serverB)
+nc -l 19000|bzip2 -d|dd bs=16M of=/dev/sdb
+
+# Draai op host waar we data naartoe willen sturen (serverA)
+dd bs=16M if=/dev/sda|bzip2 -c|nc serverB.example.net 19000
+```
 
 ## Bootstrapping (computer systeem opstarten en klaarmaken voor gebruik)
 1. Bootproces gaat instructies laden op ROM, die starten meestal firmware op (BIOS)
