@@ -216,6 +216,24 @@ Als linux een MBR gebruikt is dit meestal grub of lilo. Windows heeft zijn eigen
     * `echo ${#table[*]}` → Toont aantal elementen
     * `echo ${table[@]}` of `echo ${table[*]}` → toont alle elementen
     * `unset tablename[idx]` of `unset tablename` → verwijdert tabel index of tabel
+* Woordexpansie
+    * **Brace Expansie** → Kan willekeurige strings genereren
+        * vb: `echo a{d,c,b}e geeft ade ace abe`
+        * vb: `echo a{0..9} geeft a0 a1 a2 a3 a4 a5 a6 a7 a8 a9`
+    * **Tilde Expansie** → Als woord begint met dit, dan vervangen tot de eerste slash
+        * vb: `~/.bashrc` gaat `/root/.bashrc` teruggeven
+    * **Parameter expansie** → Als woord met $ begint, expandeer var
+        * vb: `$var`
+        * vb: `${var}` 
+        * vb: `${!var}`: als !, vervang !var door var en vervang geheel door waarde van variabele met als naam de inhoud van var 
+    * **Commando subtitutie** → Voer commando uit en STDOUT komt als woord(en) op cli
+        * vb: `commando`
+        * vb: `$(commando)`
+    * **Arithmetic expansie** → Voeg aritmische uitdrukking uit en vervang geheel door uitkomst
+        * vb: `$(( uitdrukking ))`
+    * **Woordsplitsing** → Shell scant resultaten van de expansies en kijkt of nog woorden moeten gesplitst worden. (zie IFS)
+    * **Padnaamexpansie**
+Meta tokens: *, ?, [, ...file
 * Speciale notering: foutboodschap
     * `echo ${var?}` → Als var gezet print, anders error
     * `echo ${var?error happened\?}` → Toont error happened als niet gezet
