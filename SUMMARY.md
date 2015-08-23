@@ -1,7 +1,6 @@
 # Summary
 
 * [introduction](README.md)
-* [1. Filesystem : Directory structure and Commands](filesystem__directory_structure_and_commands.md)
 * [2. Unix Shell](unix_shell.md)
 * [3. Commands](commands.md)
 * [4. Bash Scripting](bash_scripting.md)
@@ -13,6 +12,7 @@
 * [Utilities](utilities.md)
 * [Exercises](exercises.md)
 * [ExercisesScripting](exercisesscripting.md)
+* [1. Filesystem : Directory structure and Commands](filesystem__directory_structure_and_commands.md)
 * [CheatSheetTest](cheatsheettest.md)
    * Examen
 
