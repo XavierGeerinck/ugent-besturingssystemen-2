@@ -76,7 +76,57 @@ done
 ## Script 2
 
 ```
+#!/bin/bash
+# ========================================================================
+# Aanroep: scriptnaam naam telefoonboek [nummer]
+# ========================================================================
+# Gegeven:
+# ========================================================================
+# Een bestand telefoonboek met daarin verschillende lijnen van het type naam:adres:info:tel1:tel2:tel3
+# ========================================================================
+# Gevraagd:
+# ========================================================================
+# Schrijf de telefoonnummer uit (op basis van het meegegeven nummer).
+# Indien er geen nummer is meegegeven, neem je standaard 1.
+# Schrijf vervolgens uit hoeveel nummers die persoon in het bestand heeft zitten
 
+# Reset IFS
+IFS=""
+
+# Kijk of argumenten meegegeven
+if [[ -z $1 || -z $2 ]]; then
+	echo "Geen argument meegegeven"
+	echo "Gebruik: $0 <naam> <telefoonboekfile> [nummer]"
+	echo "Vb: $0 \"Xavier Geerinck\" ./tel.txt 2"
+	exit
+fi
+
+# Zet standaard op 1
+if [[ -z $3 ]]; then
+	NUMMER=1
+else
+	NUMMER=$3
+fi
+
+TELEFOONBOEK=$2
+NAAM=$1
+INFO=`grep -E "$NAAM:" $TELEFOONBOEK`
+
+if [[ ! -z `echo $INFO | cut -f 4 -d ':'` ]]; then
+	NUMMERS[0]=`echo $INFO | cut -f 4 -d ':'`
+fi
+
+if [[ ! -z `echo $INFO | cut -f 5 -d ':'` ]]; then
+	NUMMERS[1]=`echo $INFO | cut -f 5 -d ':'`
+fi
+
+if [[ ! -z `echo $INFO | cut -f 6 -d ':'` ]]; then
+	NUMMERS[2]=`echo $INFO | cut -f 6 -d ':'`
+fi
+
+# Schrijf telefoonnummer uit
+echo "Telefoonnummer: ${NUMMERS[$(($NUMMER - 1))]}"
+echo "Aant nummers: ${#NUMMERS[@]}"
 ```
 
 ## Script 3a
