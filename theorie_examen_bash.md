@@ -73,12 +73,6 @@ for gebruiker in ${GROUP_USERS[@]}; do
 done
 ```
 
-## Script 1b
-
-```
-
-```
-
 ## Script 2
 
 ```
