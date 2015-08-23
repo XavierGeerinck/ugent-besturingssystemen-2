@@ -305,7 +305,7 @@ De betekenis van wildcards kan ongedaan worden gemaakt door:
 * Invoer direct, niet via een apart bestand.
 * $ en `...` worden geinterpreteerd, tenzij tussen aanhalingstekens of voorafgegaan door \
 
-## Beschrijf de werking van het filesystem fysisch, hoe verschillende worden fysische media in het systeem beheerd?
+## Beschrijf de werking van het filesystem fysisch, hoe worden verschillende fysische media in het systeem beheerd?
 ### Logische boomstructuur verdelen over verschillende fysische diske of partities
 * Kan zelfs over verschillende computers
 * Meestal magnetische schijf
