@@ -7,7 +7,6 @@
 * [5. Users](users_and_the_internal_filesystem.md)
 * [6. Internal Filesystem](6_internal_filesystem.md)
 * [7. Processes](processes.md)
-* [8. Questions](questions.md)
 * [Booting and Shutdown](booting_and_shutdown.md)
 * [Utilities](utilities.md)
 * [Exercises](exercises.md)
@@ -15,4 +14,5 @@
 * [1. Filesystem : Directory structure and Commands](filesystem__directory_structure_and_commands.md)
 * [CheatSheetTest](cheatsheettest.md)
 * Examen
+    * [8. Questions](questions.md)
 
