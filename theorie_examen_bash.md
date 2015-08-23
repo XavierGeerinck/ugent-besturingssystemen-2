@@ -185,7 +185,54 @@ done
 ## Script 3b
 
 ```
+#!/bin/bash
+# ========================================================================
+# Aanroep: scriptnaam src dst [patroon]
+# ========================================================================
+# Gegeven:
+# ========================================================================
+# Er worden minstens 2 argumenten meegegeven, nl. het bestandspatroon en 1 of meer directory’s.
+# ========================================================================
+# Gevraagd:
+# ========================================================================
+# Schrijf een script dat de inhoud van een map naar een andere map kopieert.
+# Doe dit weliswaar enkel voor de bestanden die voldoen aan een bepaald patroon.
+# Maak een tijdelijk bestand aan en sla de padnamen van alle bronbestanden er in op.
+#
+# Lees iedere lijn uit het tijdelijk bestand en kopieer de files naar de doeldirectory’s.
+# Tel hierbij het aantal bestanden.
+# Schrijf tot slot het aantal gekopieerde bestanden uit en verwijder de tijdelijke file.
+# Voer o.a. testen uit op:
+# - teveel of te weinig argumenten
+# - overloop met een for-lus of alle doeldirectory’s bestaan.
+# Wanneer er een test faalt, sluit je het programma af.
+# Druk dan tevens af hoe je het moet gebruiken.
+# Onenigheid over: De parameters kunnen spaties óf speciale tekens bevatten
 
+# Reset IFS
+IFS=""
+
+# Kijk of argumenten meegegeven
+if [[ -z $1 || -z $2 ]]; then
+	echo "Geen argument meegegeven"
+	echo "Gebruik: $0 <filepatroon> <dir1> [dir2, dir3, dir4, ...]"
+	echo "Vb: $0 \"*.h\" /usr"
+	exit
+fi
+
+PATROON=$3
+DEST=$2
+
+find $1 -name "$PATROON" > /tmp/temp.txt
+
+# Go through the lines
+FILECOUNT=0
+while read line; do
+	cp $line $DEST
+	((FILECOUNT++))
+done < /tmp/temp.txt
+
+echo "files copied: $FILECOUNT"
 ```
 
 ## Script 4
