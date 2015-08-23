@@ -15,6 +15,7 @@ Daarnaast kunnen we ook backups nemen door gewoon een kopie te maken van bepaald
 
 ```
 # Draai op host waar we data van gaan ophalen (serverB)
+# Note: Blocksize = 16Mb
 nc -l 19000|bzip2 -d|dd bs=16M of=/dev/sdb
 
 # Draai op host waar we data naartoe willen sturen (serverA)
