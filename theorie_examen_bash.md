@@ -132,7 +132,54 @@ echo "Aant nummers: ${#NUMMERS[@]}"
 ## Script 3a
 
 ```
+#!/bin/bash
+# ========================================================================
+# Aanroep: scriptnaam filepatroon dir1 [dir2 dir3 … ]
+# ========================================================================
+# Gegeven:
+# ========================================================================
+# Er worden minstens 2 argumenten meegegeven, nl. het bestandspatroon en 1 of meer directory’s.
+# ========================================================================
+# Gevraagd:
+# ========================================================================
+# Schrijf alle files en directory’s uit die voorkomen in de meegegeven directory’s.
+# Weliswaar enkel diegenen die voldoen aan het patroon.
+# Het programma moet stoppen vanaf wanneer er meer dan 1 directory niet beschikbaar is.
+# Ze moeten weliswaar eerst allemaal gecontroleerd worden (op hun bestaan).
+# Tevens moet er gecontroleerd worden op het aantal (genoeg) argumenten.
+# Extra eisen:
+# - er mag geen foutenuitvoer verschijnen in de shell
+# - de bestanden en directory’s moeten uitgeschreven worden met hun absolute padnaam
+# (directory’s eindigend op een “/”).
 
+# Reset IFS
+IFS=""
+
+# Kijk of argumenten meegegeven
+if [[ -z $1 || -z $2 ]]; then
+	echo "Geen argument meegegeven"
+	echo "Gebruik: $0 <filepatroon> <dir1> [dir2, dir3, dir4, ...]"
+	echo "Vb: $0 \"*.h\" /usr"
+	exit
+fi
+
+PATROON=$1
+
+shift # Rebase alles en verwijderd $1 en zet deze op $2
+
+# Kijk of meegegeven directories bestaan
+for arg in "$@"; do
+	if [[ ! -d $arg ]]; then
+		echo "Dir $arg bestaat niet"
+		exit
+	fi
+done
+
+# Loop over dirs
+for arg in "$@"; do
+	echo "$arg"
+	find $arg -name $PATROON 2>/dev/null -exec ls -la {} \;
+done
 ```
 
 ## Script 3b
