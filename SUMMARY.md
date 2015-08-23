@@ -12,7 +12,7 @@
 * [Utilities](utilities.md)
 * [Exercises](exercises.md)
 * [ExercisesScripting](exercisesscripting.md)
-* Examen
 * [1. Filesystem : Directory structure and Commands](filesystem__directory_structure_and_commands.md)
 * [CheatSheetTest](cheatsheettest.md)
+* Examen
 
