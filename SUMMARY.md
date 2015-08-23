@@ -14,5 +14,5 @@
 * [1. Filesystem : Directory structure and Commands](filesystem__directory_structure_and_commands.md)
 * [CheatSheetTest](cheatsheettest.md)
 * Examen
-    * [8. Questions](questions.md)
+    * [Questions](questions.md)
 
