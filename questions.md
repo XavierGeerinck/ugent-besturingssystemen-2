@@ -1,6 +1,16 @@
 # 8. Questions
 ## Bespreek backup en restore mogelijkheden
-Un
+Unix heeft verschillende backup en restore mogelijkheden.
+
+Allereerst is het mogelijk om een backup te maken aan de hand van verschillende strategieen:
+* **Volledige backup:** Neemt een backup van het volledige systeem
+* **Incrementele backup:** Neemt een backup van de veranderingen sinds de laatste backup (zijnde een volledige, differentiele of incrementele backup)
+* **Differentiele backup:** Neemt een backup van de veranderingen sinds de laatste volledige backup.
+
+Daarnaast kunnen we ook backups nemen door gewoon een kopie te maken van bepaalde folders of zelfs het volledige systeem. Dit doen we met hulpprogrammma's:
+
+* **Tar:** Dit is een van de bekendste archief programma's, het kan archieven maken, verwijderen en openen. Elk bestand of folder behoudt ijn originele structuur en tar gaat ook de permissies, eigenaars en timestamps bijhouden.
+
 ## Bootstrapping (computer systeem opstarten en klaarmaken voor gebruik)
 1. Bootproces gaat instructies laden op ROM, die starten meestal firmware op (BIOS)
 2. Deze BIOS herkent de hardware en gaat bootpgoramma lokaliseren en starten
