@@ -1,4 +1,6 @@
 # 8. Questions
+## Bespreek backup en restore mogelijkheden
+Un
 ## Bootstrapping (computer systeem opstarten en klaarmaken voor gebruik)
 1. Bootproces gaat instructies laden op ROM, die starten meestal firmware op (BIOS)
 2. Deze BIOS herkent de hardware en gaat bootpgoramma lokaliseren en starten
